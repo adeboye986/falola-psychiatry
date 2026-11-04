@@ -14,15 +14,40 @@ class SiteRoutesTest extends TestCase
         $this->withoutVite();
     }
 
-    public function test_home_page_renders_the_phase_one_foundation(): void
+    public function test_home_page_renders_the_approved_homepage_content(): void
     {
         $response = $this->get('/');
 
         $response
             ->assertOk()
             ->assertViewIs('home')
-            ->assertSee('Falola Psychiatry Practice')
-            ->assertSee('Phase 1 foundation');
+            ->assertSee('Mental Health Care')
+            ->assertSee('Dr. Michael Falola, M.D., M.P.H.')
+            ->assertSee('Accepted Insurance')
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertDontSee('board-certified', false);
+    }
+
+    public function test_home_page_links_every_service_card_to_its_detail_route(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertOk();
+
+        foreach ([
+            'adhd',
+            'anxiety',
+            'depression',
+            'bipolar-disorders',
+            'trauma',
+            'ocd',
+            'addiction',
+            'schizophrenia',
+            'brief-psychotherapies',
+            'academic-coaching',
+        ] as $service) {
+            $response->assertSee('href="'.route('services.show', ['service' => $service]).'"', false);
+        }
     }
 
     #[DataProvider('placeholderPages')]
