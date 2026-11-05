@@ -1,6 +1,7 @@
 @props([
     'name',
     'slug',
+    'description',
     'image',
     'alt',
     'position' => 'object-center',
@@ -26,7 +27,7 @@
             {{ $name }}
         </h3>
         <p class="mt-2 text-sm leading-6 text-slate-700 sm:text-[0.9375rem]">
-            {{ $name }} is listed among the practice's areas of care.
+            {{ $description }}
         </p>
         <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-green">
             Learn More

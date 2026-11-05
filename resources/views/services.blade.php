@@ -10,6 +10,7 @@
         [
             'name' => 'ADHD',
             'slug' => 'adhd',
+            'description' => 'Support for patterns of inattention, hyperactivity, and impulsivity that can affect daily life.',
             'image' => 'service-adhd.jpg',
             'alt' => 'A person completing a written checklist.',
             'position' => 'object-center',
@@ -17,6 +18,7 @@
         [
             'name' => 'Anxiety',
             'slug' => 'anxiety',
+            'description' => 'Care for persistent worry, fear, or dread that can interfere with everyday activities.',
             'image' => 'service-anxiety.jpg',
             'alt' => 'Portrait of a thoughtful person.',
             'position' => 'object-center',
@@ -24,6 +26,7 @@
         [
             'name' => 'Depression',
             'slug' => 'depression',
+            'description' => 'Care for symptoms that can affect mood, thinking, sleep, work, and other daily activities.',
             'image' => 'service-depression.jpg',
             'alt' => 'A person sitting thoughtfully on a couch.',
             'position' => 'object-center',
@@ -31,6 +34,7 @@
         [
             'name' => 'Bipolar Disorders',
             'slug' => 'bipolar-disorders',
+            'description' => 'Care related to significant changes in mood, energy, activity levels, and concentration.',
             'image' => 'service-bipolar.jpg',
             'alt' => 'A conversation in a professional office.',
             'position' => 'object-center',
@@ -38,6 +42,7 @@
         [
             'name' => 'Trauma',
             'slug' => 'trauma',
+            'description' => 'Support for lasting emotional or functional effects of harmful or threatening experiences.',
             'image' => 'service-trauma.jpg',
             'alt' => 'Two people in a therapy conversation.',
             'position' => 'object-center',
@@ -45,6 +50,7 @@
         [
             'name' => 'OCD',
             'slug' => 'ocd',
+            'description' => 'Care for recurring, unwanted thoughts and repetitive behaviors that may cause distress.',
             'image' => 'service-ocd.jpg',
             'alt' => 'A person completing a written form.',
             'position' => 'object-center',
@@ -52,6 +58,7 @@
         [
             'name' => 'Addiction',
             'slug' => 'addiction',
+            'description' => 'Support for substance-use concerns that may continue despite harmful consequences.',
             'image' => 'service-addiction.jpg',
             'alt' => 'A quiet breakfast setting with coffee.',
             'position' => 'object-center',
@@ -59,6 +66,7 @@
         [
             'name' => 'Schizophrenia',
             'slug' => 'schizophrenia',
+            'description' => 'Care related to a serious mental illness that can affect thinking, feeling, and behavior.',
             'image' => 'service-schizophrenia.jpg',
             'alt' => 'A quiet home in a green landscape.',
             'position' => 'object-center',
@@ -66,6 +74,7 @@
         [
             'name' => 'Brief Psychotherapies',
             'slug' => 'brief-psychotherapies',
+            'description' => 'Time-limited, focused psychotherapy intended to address defined concerns and goals.',
             'image' => 'service-brief-psychotherapies.jpg',
             'alt' => 'Two people talking in a therapy setting.',
             'position' => 'object-center',
@@ -73,6 +82,7 @@
         [
             'name' => 'Academic Coaching',
             'slug' => 'academic-coaching',
+            'description' => 'Support focused on study strategies, time management, organization, and academic goals.',
             'image' => 'service-academic-coaching.jpg',
             'alt' => 'A graduation cap and diploma.',
             'position' => 'object-center',
@@ -105,11 +115,11 @@
 
             <div class="h-72 overflow-hidden sm:h-96 lg:h-auto">
                 <img
-                    class="size-full object-cover object-center"
-                    src="{{ asset('images/home/appointment-office.webp') }}"
-                    alt="A calm office seating area."
-                    width="2172"
-                    height="724"
+                    class="size-full object-cover object-[58%_48%]"
+                    src="{{ asset('images/services/hero-consultation-room.webp') }}"
+                    alt="A comfortable armchair beside a plant and side table in a calm consultation room."
+                    width="1800"
+                    height="1200"
                     fetchpriority="high"
                 >
             </div>
@@ -133,6 +143,7 @@
                     <x-site.service-overview-card
                         :name="$service['name']"
                         :slug="$service['slug']"
+                        :description="$service['description']"
                         :image="$service['image']"
                         :alt="$service['alt']"
                         :position="$service['position']"

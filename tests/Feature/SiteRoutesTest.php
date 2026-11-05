@@ -75,7 +75,10 @@ class SiteRoutesTest extends TestCase
             ->assertViewIs('services')
             ->assertSee('Areas of Care and Treatment')
             ->assertSee('Interactive video and audio care')
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false);
+            ->assertSee('Support for patterns of inattention, hyperactivity, and impulsivity')
+            ->assertSee('Support focused on study strategies, time management, organization, and academic goals.')
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertDontSee("is listed among the practice's areas of care");
 
         foreach ([
             'adhd' => 'ADHD',
