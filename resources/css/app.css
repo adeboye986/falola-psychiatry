@@ -60,7 +60,7 @@
     }
 
     .footer-link {
-        @apply transition hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+        @apply transition hover:text-brand-lime focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
     }
 }
 

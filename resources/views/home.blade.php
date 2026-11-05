@@ -93,14 +93,13 @@
         >
         <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(251,248,242,1)_0%,rgba(251,248,242,0.96)_32%,rgba(251,248,242,0.68)_48%,rgba(251,248,242,0.08)_72%)] max-md:bg-[linear-gradient(90deg,rgba(251,248,242,0.98)_0%,rgba(251,248,242,0.9)_58%,rgba(251,248,242,0.42)_100%)]"></div>
 
-        <div class="mx-auto flex min-h-[34rem] max-w-7xl items-center px-5 py-16 sm:px-8 md:min-h-[31rem] lg:px-10">
-            <div class="max-w-2xl">
+        <div class="mx-auto flex min-h-[36rem] max-w-7xl items-center px-5 py-20 sm:px-8 md:min-h-[38rem] lg:min-h-[42rem] lg:px-10">
+            <div class="max-w-3xl">
                 <p class="eyebrow">Falola Psychiatry Practice</p>
-                <h1 class="mt-4 max-w-xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-7xl">
-                    Mental Health Care
-                    <span class="block italic">When You Need It</span>
+                <h1 class="mt-4 max-w-[50rem] text-balance font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4.75rem] xl:text-[5rem]">
+                    Mental Health Care When You Need It
                 </h1>
-                <p class="mt-5 max-w-xl text-base leading-7 text-slate-800 sm:text-lg">
+                <p class="mt-6 max-w-2xl text-base leading-7 text-slate-800 sm:text-lg">
                     Comprehensive and compassionate care with a focus on empathy and respect. Flexible hours, anywhere in Alabama via telepsychiatry.
                 </p>
                 <div class="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -116,7 +115,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-10 lg:py-20">
+        <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 py-24 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-24 lg:px-10 lg:py-28">
             <div class="overflow-hidden rounded-2xl bg-slate-100 shadow-[0_14px_36px_rgba(31,50,42,0.12)]">
                 <img
                     class="aspect-[4/3] w-full object-cover object-top"
@@ -146,7 +145,7 @@
     </section>
 
     <section class="bg-brand-ivory">
-        <div class="mx-auto max-w-[94rem] px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+        <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
             <div class="mx-auto max-w-3xl text-center">
                 <p class="eyebrow">Our Services</p>
                 <h2 class="mt-2 font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green sm:text-5xl">
@@ -157,7 +156,7 @@
                 </p>
             </div>
 
-            <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+            <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                 @foreach ($services as $service)
                     <x-site.service-card
                         :name="$service['name']"
@@ -170,9 +169,9 @@
         </div>
     </section>
 
-    <section class="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
-        <div class="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-brand-green shadow-[0_18px_45px_rgba(0,61,45,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
-            <div class="min-h-72 lg:min-h-[22rem]">
+    <section class="bg-white px-5 py-24 sm:px-8 lg:px-10 lg:py-28">
+        <div class="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-brand-green shadow-[0_18px_45px_rgba(0,61,45,0.18)] lg:grid-cols-[1.12fr_0.88fr]">
+            <div class="aspect-[16/10] lg:aspect-auto lg:min-h-[30rem]">
                 <img
                     class="size-full object-cover"
                     src="{{ asset('images/home/telepsychiatry.jpg') }}"
@@ -183,8 +182,7 @@
                 >
             </div>
 
-            <div class="relative flex items-center overflow-hidden px-7 py-10 text-white sm:px-10 lg:px-14">
-                <div class="absolute -right-20 -top-24 size-64 rounded-full border border-white/10"></div>
+            <div class="relative flex items-center overflow-hidden px-7 py-12 text-white sm:px-10 lg:px-16 lg:py-16">
                 <div class="relative">
                     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-lime">Telepsychiatry</p>
                     <h2 class="mt-2 max-w-xl font-serif text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
@@ -204,7 +202,7 @@
     </section>
 
     <section class="border-y border-brand-sand/70 bg-brand-beige">
-        <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[0.75fr_1.65fr] lg:items-center lg:px-10">
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.75fr_1.65fr] lg:items-center lg:px-10 lg:py-24">
             <div class="lg:border-r lg:border-brand-green/30 lg:pr-10">
                 <h2 class="font-serif text-4xl font-semibold leading-none tracking-[-0.025em] text-brand-green sm:text-5xl">
                     Accepted Insurance
@@ -238,7 +236,7 @@
         >
         <div class="absolute inset-0 -z-10 bg-brand-ivory/70 backdrop-blur-[1px]"></div>
 
-        <div class="mx-auto flex min-h-[24rem] max-w-7xl items-center justify-center px-5 py-16 text-center sm:px-8 lg:px-10">
+        <div class="mx-auto flex max-w-7xl items-center justify-center px-5 py-28 text-center sm:px-8 lg:px-10 lg:py-36">
             <div class="max-w-2xl">
                 <h2 class="font-serif text-5xl font-semibold tracking-[-0.03em] text-brand-green sm:text-6xl">
                     Take the Next Step
