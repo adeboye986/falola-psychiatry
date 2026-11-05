@@ -66,6 +66,35 @@ class SiteRoutesTest extends TestCase
             ->assertDontSee('board-certified', false);
     }
 
+    public function test_services_page_renders_every_verified_service_and_destination(): void
+    {
+        $response = $this->get('/services');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('services')
+            ->assertSee('Areas of Care and Treatment')
+            ->assertSee('Interactive video and audio care')
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false);
+
+        foreach ([
+            'adhd' => 'ADHD',
+            'anxiety' => 'Anxiety',
+            'depression' => 'Depression',
+            'bipolar-disorders' => 'Bipolar Disorders',
+            'trauma' => 'Trauma',
+            'ocd' => 'OCD',
+            'addiction' => 'Addiction',
+            'schizophrenia' => 'Schizophrenia',
+            'brief-psychotherapies' => 'Brief Psychotherapies',
+            'academic-coaching' => 'Academic Coaching',
+        ] as $slug => $name) {
+            $response
+                ->assertSee($name)
+                ->assertSee('href="'.route('services.show', ['service' => $slug]).'"', false);
+        }
+    }
+
     #[DataProvider('placeholderPages')]
     public function test_sitemap_placeholder_pages_render(string $uri, string $heading): void
     {
@@ -84,7 +113,6 @@ class SiteRoutesTest extends TestCase
     public static function placeholderPages(): array
     {
         return [
-            'services' => ['/services', 'Services'],
             'service detail' => ['/services/content-pending', 'Service Detail'],
             'telepsychiatry' => ['/telepsychiatry', 'Telepsychiatry'],
             'patient information' => ['/patient-information', 'Patient Information'],

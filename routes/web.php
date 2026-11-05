@@ -6,10 +6,7 @@ Route::view('/', 'home')->name('home');
 
 Route::view('/about', 'about')->name('about');
 
-Route::view('/services', 'pages.placeholder', [
-    'title' => 'Services',
-    'description' => 'Service summaries are awaiting clinical review and approval.',
-])->name('services.index');
+Route::view('/services', 'services')->name('services.index');
 
 Route::view('/services/{service}', 'pages.placeholder', [
     'title' => 'Service Detail',
