@@ -21,7 +21,7 @@
         rel="noopener noreferrer"
     @endif
     {{ $attributes->class([
-        'group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-lg px-5 py-3 text-center text-sm font-semibold shadow-sm transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green sm:px-6',
+        'group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-lg px-5 py-3 text-center text-[0.9375rem] font-semibold shadow-sm transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green sm:px-6',
         $variantClasses,
     ]) }}
 >

@@ -115,7 +115,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[0.9fr_1.35fr] lg:gap-16 lg:px-10 lg:py-10">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[0.95fr_1.45fr] lg:gap-14 lg:px-10 lg:py-10">
             <div class="overflow-hidden rounded-2xl bg-slate-100 shadow-[0_14px_36px_rgba(31,50,42,0.12)]">
                 <img
                     class="aspect-[3/2] w-full object-cover object-top"
@@ -129,10 +129,10 @@
 
             <div>
                 <p class="eyebrow">Meet Your Psychiatrist</p>
-                <h2 class="mt-2 font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
+                <h2 class="mt-2 text-pretty font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
                     Dr. Michael Falola, M.D., M.P.H.
                 </h2>
-                <p class="mt-4 max-w-2xl text-base leading-7 text-slate-700 lg:text-lg">
+                <p class="mt-4 max-w-2xl text-[1.0625rem] leading-7 text-slate-700 lg:text-lg">
                     Dr. Falola is a psychiatrist and academic professional with extensive clinical, educational, and research experience. His work has included clinical care, academic psychiatry, and research.
                 </p>
                 <div class="mt-7">
@@ -151,7 +151,7 @@
                 <h2 class="mt-2 font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
                     Comprehensive Psychiatric Services
                 </h2>
-                <p class="mt-3 text-base leading-7 text-slate-700 sm:text-lg">
+                <p class="mt-3 text-[1.0625rem] leading-7 text-slate-700 sm:text-lg">
                     Explore the areas of care offered by Falola Psychiatry Practice.
                 </p>
             </div>

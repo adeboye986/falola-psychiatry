@@ -2,7 +2,7 @@
     <nav class="mx-auto flex max-w-[90rem] items-center justify-between gap-5 px-5 py-2 sm:px-8 lg:px-10" aria-label="Primary navigation">
         <x-site.logo compact />
 
-        <div class="hidden items-center gap-7 xl:flex">
+        <div class="hidden items-center gap-8 xl:flex">
             <a class="site-nav-link {{ request()->routeIs('home') ? 'site-nav-link-active' : '' }}" href="{{ route('home') }}">Home</a>
             <a class="site-nav-link {{ request()->routeIs('about') ? 'site-nav-link-active' : '' }}" href="{{ route('about') }}">About</a>
             <a class="site-nav-link {{ request()->routeIs('services.*') ? 'site-nav-link-active' : '' }}" href="{{ route('services.index') }}">
@@ -17,8 +17,8 @@
             <a class="site-nav-link {{ request()->routeIs('contact') ? 'site-nav-link-active' : '' }}" href="{{ route('contact') }}">Contact</a>
         </div>
 
-        <div class="hidden items-center gap-5 xl:flex">
-            <a class="inline-flex items-center gap-2 text-sm font-semibold text-brand-green transition hover:text-brand-green-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green" href="tel:+16593466314">
+        <div class="hidden items-center gap-6 xl:flex">
+            <a class="inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-brand-green transition hover:text-brand-green-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green" href="tel:+16593466314">
                 <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" /></svg>
                 (659) 346-6314
             </a>
