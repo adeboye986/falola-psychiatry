@@ -1,5 +1,5 @@
 <header class="relative z-40 border-b border-brand-sand/70 bg-white" x-data="{ navigationOpen: false }" @keydown.escape.window="navigationOpen = false">
-    <nav class="mx-auto flex max-w-[94rem] items-center justify-between gap-5 px-5 py-3 sm:px-8 lg:px-10" aria-label="Primary navigation">
+    <nav class="mx-auto flex max-w-[90rem] items-center justify-between gap-5 px-5 py-2 sm:px-8 lg:px-10" aria-label="Primary navigation">
         <x-site.logo compact />
 
         <div class="hidden items-center gap-7 xl:flex">

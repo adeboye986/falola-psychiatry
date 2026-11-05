@@ -6,13 +6,13 @@
 <a
     href="{{ route('home') }}"
     aria-label="Falola Psychiatry Practice home"
-    {{ $attributes->class(['inline-flex items-center']) }}
+    {{ $attributes->class(['brand-lockup', 'brand-lockup-light' => $light]) }}
 >
-    <img
-        class="shrink-0 object-contain {{ $compact ? 'size-20 sm:size-24' : 'size-32 sm:size-36' }} {{ $light ? 'rounded-xl bg-brand-ivory p-2 shadow-sm' : '' }}"
-        src="{{ asset('images/home/logo-mark.png') }}"
-        alt="Falola Psychiatry Practice"
-        width="260"
-        height="260"
-    >
+    <span class="brand-lockup-mark" aria-hidden="true">
+        <img src="{{ asset('images/home/logo-mark.png') }}" alt="" width="260" height="260">
+    </span>
+    <span class="brand-lockup-wordmark" aria-hidden="true">
+        <img src="{{ asset('images/home/logo-mark.png') }}" alt="" width="260" height="260">
+    </span>
+    <span class="sr-only">Falola Psychiatry Practice</span>
 </a>

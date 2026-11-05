@@ -2,7 +2,7 @@
 
 <div
     aria-label="{{ $name }}"
-    {{ $attributes->class(['flex min-h-16 items-center justify-center rounded-xl border border-brand-sand bg-white px-4 py-3 text-center shadow-[0_4px_12px_rgba(31,50,42,0.08)]']) }}
+    {{ $attributes->class(['flex min-h-12 items-center justify-center rounded-lg border border-brand-sand bg-white px-3 py-2 text-center shadow-[0_4px_12px_rgba(31,50,42,0.08)]']) }}
 >
     @switch($name)
         @case('Medicare')
