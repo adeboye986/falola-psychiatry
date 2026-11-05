@@ -50,6 +50,22 @@ class SiteRoutesTest extends TestCase
         }
     }
 
+    public function test_about_page_renders_verified_physician_content(): void
+    {
+        $response = $this->get('/about');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('about')
+            ->assertSee('Dr. Michael Falola, M.D., M.P.H.')
+            ->assertSee('University of Alabama at Birmingham')
+            ->assertSee('Current and Past Appointments')
+            ->assertSee('https://www.researchgate.net/profile/Michael-Falola', false)
+            ->assertSee('https://www.psychiatryonline.org/doi/10.1176/appi.pn.2018.6a26', false)
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertDontSee('board-certified', false);
+    }
+
     #[DataProvider('placeholderPages')]
     public function test_sitemap_placeholder_pages_render(string $uri, string $heading): void
     {
@@ -68,7 +84,6 @@ class SiteRoutesTest extends TestCase
     public static function placeholderPages(): array
     {
         return [
-            'about' => ['/about', 'About'],
             'services' => ['/services', 'Services'],
             'service detail' => ['/services/content-pending', 'Service Detail'],
             'telepsychiatry' => ['/telepsychiatry', 'Telepsychiatry'],

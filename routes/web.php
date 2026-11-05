@@ -4,10 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
-Route::view('/about', 'pages.placeholder', [
-    'title' => 'About',
-    'description' => 'Practice and physician content is awaiting review and approval.',
-])->name('about');
+Route::view('/about', 'about')->name('about');
 
 Route::view('/services', 'pages.placeholder', [
     'title' => 'Services',
