@@ -25,7 +25,7 @@
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-10 xl:px-20">
                 <div class="max-w-xl">
                     <p class="eyebrow">About Falola Psychiatry Practice</p>
-                    <h1 class="mt-3 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.035em] text-brand-green lg:text-[3.5rem]">
+                    <h1 class="mt-3 font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green lg:text-[3.5rem]">
                         Dr. Michael Falola, M.D., M.P.H.
                     </h1>
                     <p class="mt-4 max-w-lg text-[1.0625rem] leading-7 text-slate-800">
@@ -57,9 +57,9 @@
 
     <section class="bg-white">
         <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:px-10">
-            <div class="mx-auto w-full max-w-lg overflow-hidden rounded-xl bg-slate-100 shadow-[0_10px_28px_rgba(31,50,42,0.1)] lg:max-w-none">
+            <div class="mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-slate-100 shadow-[0_10px_28px_rgba(31,50,42,0.1)]">
                 <img
-                    class="aspect-[4/3] w-full object-cover object-[50%_28%]"
+                    class="h-auto w-full"
                     src="{{ asset('images/about/dr-falola-professional.jpg') }}"
                     alt="Professional portrait of Dr. Michael Falola."
                     width="978"
@@ -69,7 +69,7 @@
             </div>
 
             <div>
-                <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green sm:text-[2.75rem]">
+                <h2 class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green sm:text-[2.75rem]">
                     Professional Biography
                 </h2>
                 <div class="mt-5 space-y-4 text-base leading-7 text-slate-700 sm:text-[1.0625rem] sm:leading-8">
@@ -87,7 +87,7 @@
     <section class="border-y border-brand-sand/70 bg-brand-beige">
         <div class="mx-auto grid max-w-6xl gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:px-10">
             <div class="lg:border-r lg:border-brand-green/20 lg:pr-14">
-                <h2 class="font-serif text-4xl font-semibold tracking-[-0.025em] text-brand-green">
+                <h2 class="font-serif text-4xl font-normal tracking-[-0.025em] text-brand-green">
                     Education and Training
                 </h2>
                 <div class="mt-7 flex items-start gap-5">
@@ -98,7 +98,7 @@
                         </svg>
                     </span>
                     <div>
-                        <h3 class="font-serif text-2xl font-semibold text-brand-green">Psychiatry Residency</h3>
+                        <h3 class="font-serif text-2xl font-normal text-brand-green">Psychiatry Residency</h3>
                         <p class="mt-1 text-base leading-7 text-slate-800">University of Alabama at Birmingham</p>
                         <p class="text-sm leading-6 text-slate-600">Completed in 2018</p>
                     </div>
@@ -107,7 +107,7 @@
 
             <div class="space-y-8">
                 <div>
-                    <h2 class="font-serif text-3xl font-semibold tracking-[-0.025em] text-brand-green">
+                    <h2 class="font-serif text-3xl font-normal tracking-[-0.025em] text-brand-green">
                         Clinical Experience
                     </h2>
                     <p class="mt-3 text-base leading-7 text-slate-700">
@@ -116,7 +116,7 @@
                 </div>
 
                 <div>
-                    <h2 class="font-serif text-3xl font-semibold tracking-[-0.025em] text-brand-green">
+                    <h2 class="font-serif text-3xl font-normal tracking-[-0.025em] text-brand-green">
                         Academic and Research Work
                     </h2>
                     <p class="mt-3 text-base leading-7 text-slate-700">
@@ -130,7 +130,7 @@
     <section class="bg-white">
         <div class="mx-auto grid max-w-6xl gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-10">
             <div class="lg:border-r lg:border-brand-green/20 lg:pr-14">
-                <h2 class="font-serif text-4xl font-semibold tracking-[-0.025em] text-brand-green">
+                <h2 class="font-serif text-4xl font-normal tracking-[-0.025em] text-brand-green">
                     Publications
                 </h2>
                 <p class="mt-4 text-base leading-7 text-slate-700">
@@ -152,7 +152,7 @@
             </div>
 
             <div>
-                <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-brand-green">
+                <h2 class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green">
                     Professional Appointments and Recognition
                 </h2>
                 <p class="mt-4 text-base leading-7 text-slate-700">
@@ -169,7 +169,7 @@
                     <div class="grid gap-x-8 border-t border-brand-sand px-5 py-4 md:grid-cols-2">
                         @foreach ($appointments as $appointment)
                             <div class="border-b border-brand-sand/70 py-3 last:border-b-0 md:[&:nth-last-child(-n+2)]:border-b-0">
-                                <h3 class="font-serif text-lg font-semibold leading-snug text-brand-green">{{ $appointment['role'] }}</h3>
+                                <h3 class="font-serif text-lg font-normal leading-snug text-brand-green">{{ $appointment['role'] }}</h3>
                                 <p class="mt-1 text-sm leading-5 text-slate-700">{{ $appointment['organization'] }}</p>
                                 <p class="mt-1 text-xs font-semibold uppercase tracking-[0.1em] text-brand-navy">{{ $appointment['dates'] }}</p>
                             </div>
@@ -193,7 +193,7 @@
 
         <div class="mx-auto flex max-w-7xl items-center justify-center px-5 py-14 text-center sm:px-8 lg:px-10">
             <div class="max-w-2xl">
-                <h2 class="font-serif text-5xl font-semibold tracking-[-0.03em] text-brand-green">
+                <h2 class="font-serif text-5xl font-normal tracking-[-0.03em] text-brand-green">
                     Schedule an Appointment
                 </h2>
                 <p class="mx-auto mt-3 max-w-xl text-base leading-7 text-slate-800">

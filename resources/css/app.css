@@ -4,9 +4,11 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-body: var(--font-dm-sans, 'DM Sans', Arial, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji');
+    --font-heading: var(--font-dm-serif-display, 'DM Serif Display', Georgia, Cambria, 'Times New Roman', Times, serif);
+    --font-sans: var(--font-body);
+    --font-serif: var(--font-heading);
 
     --color-brand-navy: #061b52;
     --color-brand-green: #00513a;
