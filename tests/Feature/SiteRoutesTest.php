@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Support\ServicePageCatalog;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
@@ -34,18 +35,7 @@ class SiteRoutesTest extends TestCase
 
         $response->assertOk();
 
-        foreach ([
-            'adhd',
-            'anxiety',
-            'depression',
-            'bipolar-disorders',
-            'trauma',
-            'ocd',
-            'addiction',
-            'schizophrenia',
-            'brief-psychotherapies',
-            'academic-coaching',
-        ] as $service) {
+        foreach (ServicePageCatalog::slugs() as $service) {
             $response->assertSee('href="'.route('services.show', ['service' => $service]).'"', false);
         }
     }
@@ -80,22 +70,61 @@ class SiteRoutesTest extends TestCase
             ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
             ->assertDontSee("is listed among the practice's areas of care");
 
-        foreach ([
-            'adhd' => 'ADHD',
-            'anxiety' => 'Anxiety',
-            'depression' => 'Depression',
-            'bipolar-disorders' => 'Bipolar Disorders',
-            'trauma' => 'Trauma',
-            'ocd' => 'OCD',
-            'addiction' => 'Addiction',
-            'schizophrenia' => 'Schizophrenia',
-            'brief-psychotherapies' => 'Brief Psychotherapies',
-            'academic-coaching' => 'Academic Coaching',
-        ] as $slug => $name) {
+        foreach (self::servicePages() as [$slug, $name]) {
             $response
                 ->assertSee($name)
                 ->assertSee('href="'.route('services.show', ['service' => $slug]).'"', false);
         }
+    }
+
+    #[DataProvider('servicePages')]
+    public function test_each_service_detail_page_renders_its_content_and_shared_actions(string $slug, string $name): void
+    {
+        $servicePage = ServicePageCatalog::find($slug);
+        $this->assertNotNull($servicePage);
+
+        $response = $this->get(route('services.show', ['service' => $slug]));
+
+        $response
+            ->assertOk()
+            ->assertViewIs('services.show')
+            ->assertViewHas('service', fn (array $service): bool => $service['name'] === $name)
+            ->assertSee('<h1', false)
+            ->assertSee($name)
+            ->assertSee($servicePage['overview_heading'])
+            ->assertSee('Common Concerns')
+            ->assertSee('Important Note')
+            ->assertSee('general educational information')
+            ->assertSee('href="'.route('services.index').'"', false)
+            ->assertSee('href="'.route('contact').'"', false)
+            ->assertSee('href="'.route('services.show', ['service' => $slug]).'"', false)
+            ->assertSee('images/services/details/'.$slug.'.webp', false)
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false);
+    }
+
+    public function test_unknown_service_detail_returns_not_found(): void
+    {
+        $this->get('/services/not-a-service')->assertNotFound();
+    }
+
+    public function test_service_detail_photographs_are_unique_files(): void
+    {
+        $imagePaths = [];
+        $imageHashes = [];
+
+        foreach (ServicePageCatalog::slugs() as $slug) {
+            $service = ServicePageCatalog::find($slug);
+            $this->assertNotNull($service);
+
+            $imagePath = public_path('images/services/details/'.$service['hero_image']);
+            $this->assertFileExists($imagePath);
+
+            $imagePaths[] = $imagePath;
+            $imageHashes[] = hash_file('sha256', $imagePath);
+        }
+
+        $this->assertCount(10, array_unique($imagePaths));
+        $this->assertCount(10, array_unique($imageHashes));
     }
 
     #[DataProvider('placeholderPages')]
@@ -110,13 +139,27 @@ class SiteRoutesTest extends TestCase
             ->assertSee('No medical or professional information has been inferred or added.');
     }
 
-    /**
-     * @return array<string, array{string, string}>
-     */
+    /** @return array<string, array{string, string}> */
+    public static function servicePages(): array
+    {
+        return [
+            'ADHD' => ['adhd', 'ADHD'],
+            'anxiety' => ['anxiety', 'Anxiety'],
+            'depression' => ['depression', 'Depression'],
+            'bipolar disorders' => ['bipolar-disorders', 'Bipolar Disorders'],
+            'trauma' => ['trauma', 'Trauma'],
+            'OCD' => ['ocd', 'OCD'],
+            'addiction' => ['addiction', 'Addiction'],
+            'schizophrenia' => ['schizophrenia', 'Schizophrenia'],
+            'brief psychotherapies' => ['brief-psychotherapies', 'Brief Psychotherapies'],
+            'academic coaching' => ['academic-coaching', 'Academic Coaching'],
+        ];
+    }
+
+    /** @return array<string, array{string, string}> */
     public static function placeholderPages(): array
     {
         return [
-            'service detail' => ['/services/content-pending', 'Service Detail'],
             'telepsychiatry' => ['/telepsychiatry', 'Telepsychiatry'],
             'patient information' => ['/patient-information', 'Patient Information'],
             'appointments' => ['/appointments', 'Appointments'],

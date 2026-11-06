@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="@yield('meta_description', 'Falola Psychiatry Practice')">
+        @hasSection('canonical')
+            <link rel="canonical" href="@yield('canonical')">
+        @endif
 
         <title>@yield('title', config('app.name'))</title>
 

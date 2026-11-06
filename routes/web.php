@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -8,10 +9,9 @@ Route::view('/about', 'about')->name('about');
 
 Route::view('/services', 'services')->name('services.index');
 
-Route::view('/services/{service}', 'pages.placeholder', [
-    'title' => 'Service Detail',
-    'description' => 'This service page is reserved for reviewed and approved content.',
-])->where('service', '[a-z0-9-]+')->name('services.show');
+Route::get('/services/{service}', [ServiceController::class, 'show'])
+    ->where('service', '[a-z0-9-]+')
+    ->name('services.show');
 
 Route::view('/telepsychiatry', 'pages.placeholder', [
     'title' => 'Telepsychiatry',
