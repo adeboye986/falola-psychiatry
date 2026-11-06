@@ -2,7 +2,7 @@
     <nav class="relative mx-auto flex max-w-[90rem] items-center justify-between gap-3 px-4 py-2 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <x-site.logo compact />
 
-        <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 min-[1380px]:flex">
+        <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 min-[1380px]:flex">
             <a class="site-nav-link {{ request()->routeIs('home') ? 'site-nav-link-active' : '' }}" href="{{ route('home') }}">Home</a>
             <a class="site-nav-link {{ request()->routeIs('about') ? 'site-nav-link-active' : '' }}" href="{{ route('about') }}">About</a>
             <a class="site-nav-link {{ request()->routeIs('services.*') ? 'site-nav-link-active' : '' }}" href="{{ route('services.index') }}">

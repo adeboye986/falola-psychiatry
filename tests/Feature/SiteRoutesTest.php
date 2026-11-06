@@ -245,6 +245,7 @@ class SiteRoutesTest extends TestCase
         $this->assertSame(2, substr_count($header, 'href="'.route('appointments').'"'));
         $this->assertSame(0, substr_count($header, 'href="'.route('patient-information').'"'));
         $this->assertStringContainsString('sticky top-0', $header);
+        $this->assertStringContainsString('items-center gap-5 min-[1380px]:flex', $header);
         $this->assertSame(1, substr_count($header, 'src="'.asset('images/home/logo-mark-transparent.png').'"'));
         $this->assertStringContainsString('absolute left-1/2', $header);
         $this->assertStringNotContainsString('brand-lockup-mark', $header);
