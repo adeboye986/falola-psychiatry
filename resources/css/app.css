@@ -66,58 +66,18 @@
     }
 
     .brand-lockup {
-        @apply inline-flex shrink-0 items-center gap-2;
+        @apply inline-flex shrink-0;
     }
 
-    .brand-lockup-mark {
-        @apply relative block size-14 overflow-hidden;
+    .brand-lockup-image {
+        @apply h-24 w-auto object-contain;
     }
 
-    .brand-lockup-mark img {
-        @apply absolute max-w-none;
-        left: -2rem;
-        top: -0.875rem;
-        width: 7.25rem;
+    .brand-lockup-header .brand-lockup-image {
+        @apply h-16;
     }
 
-    .brand-lockup-wordmark {
-        @apply relative block h-11 w-28 overflow-hidden;
-    }
-
-    .brand-lockup-wordmark img {
-        @apply absolute max-w-none;
-        left: -1.5rem;
-        top: -5.75rem;
-        width: 9.375rem;
-    }
-
-    .brand-lockup-header {
-        gap: 0.625rem;
-    }
-
-    .brand-lockup-header .brand-lockup-mark {
-        height: 4rem;
-        width: 4rem;
-    }
-
-    .brand-lockup-header .brand-lockup-mark img {
-        left: -2.25rem;
-        top: -1rem;
-        width: 8.25rem;
-    }
-
-    .brand-lockup-header .brand-lockup-wordmark {
-        height: 3rem;
-        width: 7.5rem;
-    }
-
-    .brand-lockup-header .brand-lockup-wordmark img {
-        left: -1.625rem;
-        top: -6.3125rem;
-        width: 10.3125rem;
-    }
-
-    .brand-lockup-light img {
+    .brand-lockup-light .brand-lockup-image {
         filter: grayscale(1) invert(1) contrast(20);
         mix-blend-mode: screen;
     }

@@ -19,10 +19,6 @@
         </div>
 
         <div class="ml-auto hidden items-center gap-2 lg:flex">
-            <a class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-brand-green transition hover:text-brand-green-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green min-[1380px]:gap-0" href="tel:+16593466314" aria-label="Call Falola Psychiatry Practice at (659) 346-6314">
-                <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" /></svg>
-                <span class="min-[1380px]:sr-only">(659) 346-6314</span>
-            </a>
             @if ($patientPortalUrl !== null)
                 <x-site.button-link :href="$patientPortalUrl" variant="outline" compact external>
                     Patient Portal

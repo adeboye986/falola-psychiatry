@@ -12,11 +12,11 @@
         'brand-lockup-light' => $light,
     ]) }}
 >
-    <span class="brand-lockup-mark" aria-hidden="true">
-        <img src="{{ asset('images/home/logo-mark.png') }}" alt="" width="260" height="260">
-    </span>
-    <span class="brand-lockup-wordmark" aria-hidden="true">
-        <img src="{{ asset('images/home/logo-mark.png') }}" alt="" width="260" height="260">
-    </span>
-    <span class="sr-only">Falola Psychiatry Practice</span>
+    <img
+        class="brand-lockup-image"
+        src="{{ asset('images/home/logo-mark.png') }}"
+        alt="Falola Psychiatry Practice"
+        width="260"
+        height="260"
+    >
 </a>

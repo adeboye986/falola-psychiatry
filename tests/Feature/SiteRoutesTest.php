@@ -237,12 +237,14 @@ class SiteRoutesTest extends TestCase
 
         $this->assertNotSame('', $header);
         $this->assertSame(2, substr_count($header, 'href="'.route('contact').'"'));
-        $this->assertSame(2, substr_count($header, 'href="tel:+16593466314"'));
+        $this->assertSame(1, substr_count($header, 'href="tel:+16593466314"'));
         $this->assertSame(2, substr_count($header, 'href="'.route('office-fees-policies').'"'));
         $this->assertSame(2, substr_count($header, 'href="https://portal.kareo.com/pp-webapp/app/new/login"'));
         $this->assertSame(2, substr_count($header, 'target="_blank"'));
         $this->assertSame(2, substr_count($header, 'rel="noopener noreferrer"'));
         $this->assertSame(2, substr_count($header, 'href="'.route('appointments').'"'));
+        $this->assertSame(1, substr_count($header, 'src="'.asset('images/home/logo-mark.png').'"'));
+        $this->assertStringNotContainsString('brand-lockup-mark', $header);
     }
 
     public function test_office_fees_policies_page_is_linked_from_shared_navigation_and_patient_information(): void
