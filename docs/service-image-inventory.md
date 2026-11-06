@@ -59,9 +59,21 @@ All four Patient Information photographs are distinct Pexels photographs convert
 | Patient Information | `public/images/patient-information/insurance-payment.webp` | Insurance and Payment | [Photo 8815837](https://www.pexels.com/photo/woman-reading-a-document-before-signing-it-8815837/) by Kampus Production | Pexels license; verified free-use page | No |
 | Patient Information | `public/images/patient-information/patient-portal.webp` | Patient Portal | [Photo 7858836](https://www.pexels.com/photo/woman-browsing-the-internet-by-using-a-laptop-7858836/) by Greta Hoffman | Pexels license; verified free-use page | No |
 
-## Duplication controls- Each detail page contains exactly one photograph: its service-specific hero.
+## Contact page photographs
+
+Both Contact page photographs are distinct Pexels photographs converted locally to WebP. They are covered by the [Pexels license](https://www.pexels.com/license/), which permits free use and modification and does not require attribution. Photographer credit is retained here for provenance.
+
+| Page | Local image | Section | Source and photographer | License status | Appears elsewhere? |
+| --- | --- | --- | --- | --- | --- |
+| Contact | `public/images/contact/hero.webp` | Hero | [Photo 10375901](https://www.pexels.com/photo/woman-in-dress-sitting-in-front-of-a-laptop-10375901/) by RDNE Stock project | Pexels license; verified free-use page | No |
+| Contact | `public/images/contact/appointment-cta.webp` | Appointment CTA | [Photo 36777597](https://www.pexels.com/photo/cozy-minimalist-living-room-with-armchairs-36777597/) by Curtis Adams | Pexels license; verified free-use page | No |
+
+## Duplication controls
+
+- Each detail page contains exactly one photograph: its service-specific hero.
 - Shared logos and interface icons are brand/interface assets, not photographs.
 - Detail-page appointment sections use color and typography rather than a shared photographic background.
 - Exact file hashes and perceptual hashes must be compared across all project photographs during verification.
 - Telepsychiatry photographs must remain unique to their named sections and must not be reused on another page.
 - Patient Information photographs must remain unique to their named sections and must not be reused on another page.
+- Contact photographs must remain unique to their named sections and must not be reused on another page.

@@ -157,6 +157,44 @@ class SiteRoutesTest extends TestCase
         $this->assertCount(4, array_unique($imageHashes));
     }
 
+    public function test_contact_page_renders_verified_destinations_without_activating_a_form(): void
+    {
+        $response = $this->get('/contact');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('contact')
+            ->assertSee('Get in Touch')
+            ->assertSee('href="tel:+16593466314"', false)
+            ->assertSee('href="mailto:contact@falolapsychiatry.com"', false)
+            ->assertSee('289 Glen Cross Dr, Trussville, AL 35173')
+            ->assertSee('https://www.google.com/maps/dir/?api=1&amp;destination=289+Glen+Cross+Dr%2C+Trussville%2C+AL+35173', false)
+            ->assertSee('Please contact our office to confirm current office hours and appointment availability.')
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('This website and ordinary email are not patient portal or emergency channels.')
+            ->assertDontSee('<form', false)
+            ->assertDontSee('8:30 AM')
+            ->assertDontSee('HIPAA-compliant');
+    }
+
+    public function test_contact_page_photographs_are_unique_files(): void
+    {
+        $imagePaths = [
+            public_path('images/contact/hero.webp'),
+            public_path('images/contact/appointment-cta.webp'),
+        ];
+
+        $imageHashes = [];
+
+        foreach ($imagePaths as $imagePath) {
+            $this->assertFileExists($imagePath);
+            $imageHashes[] = hash_file('sha256', $imagePath);
+        }
+
+        $this->assertCount(2, array_unique($imagePaths));
+        $this->assertCount(2, array_unique($imageHashes));
+    }
+
     #[DataProvider('servicePages')]
     public function test_each_service_detail_page_renders_its_content_and_shared_actions(string $slug, string $name): void
     {
@@ -242,7 +280,6 @@ class SiteRoutesTest extends TestCase
         return [
             'appointments' => ['/appointments', 'Appointments'],
             'patient portal' => ['/patient-portal', 'Patient Portal'],
-            'contact' => ['/contact', 'Contact'],
         ];
     }
 }

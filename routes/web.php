@@ -27,7 +27,4 @@ Route::view('/patient-portal', 'pages.placeholder', [
     'description' => 'The patient portal is not connected during Phase 1.',
 ])->name('patient-portal');
 
-Route::view('/contact', 'pages.placeholder', [
-    'title' => 'Contact',
-    'description' => 'Contact details and safe communication options are awaiting approval.',
-])->name('contact');
+Route::view('/contact', 'contact')->name('contact');
