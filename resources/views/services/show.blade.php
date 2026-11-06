@@ -4,10 +4,6 @@
 @section('meta_description', $service['meta_description'])
 @section('canonical', route('services.show', ['service' => $serviceSlug]))
 
-@php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
-@endphp
-
 @section('content')
     <section class="overflow-hidden bg-brand-ivory">
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[25rem] lg:grid-cols-[0.9fr_1.1fr]">
@@ -115,7 +111,7 @@
                         {{ $service['cta_text'] }}
                     </p>
                     <div class="mt-6 grid gap-3 border-t border-brand-green/25 pt-6">
-                        <x-site.button-link class="w-full" :href="$appointmentUrl" icon="calendar" arrow external>
+                        <x-site.button-link class="w-full" :href="route('appointments')" icon="calendar" arrow>
                             Book an Appointment
                         </x-site.button-link>
                         <x-site.button-link class="w-full" :href="route('contact')" variant="outline" icon="phone">
@@ -172,7 +168,7 @@
                 </p>
             </div>
             <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
-                <x-site.button-link :href="$appointmentUrl" icon="calendar" arrow external>
+                <x-site.button-link :href="route('appointments')" icon="calendar" arrow>
                     Book an Appointment
                 </x-site.button-link>
                 <x-site.button-link :href="route('contact')" variant="outline" icon="phone">

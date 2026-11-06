@@ -4,10 +4,6 @@
 @section('meta_description', 'Review legacy office procedures, fee information, payment policies, telepsychiatry requirements, records, privacy, and other practice policies.')
 @section('canonical', route('office-fees-policies'))
 
-@php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
-@endphp
-
 @section('content')
     <section class="overflow-hidden bg-brand-ivory">
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[27rem] lg:grid-cols-[0.86fr_1.14fr]">
@@ -21,7 +17,7 @@
                         Review office procedures, payment information, and practice policies preserved from the legacy website. Contact the office to confirm current details.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                        <x-site.button-link :href="route('appointments')" icon="calendar">
                             Book an Appointment
                         </x-site.button-link>
                         <x-site.button-link href="tel:+16593466314" variant="outline" icon="phone">

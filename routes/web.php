@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\PatientInformationController;
+use App\Http\Controllers\PatientPortalController;
 use App\Http\Controllers\ServiceController;
 use App\Support\PracticePolicyCatalog;
 use Illuminate\Support\Facades\Route;
@@ -16,20 +19,17 @@ Route::get('/services/{service}', [ServiceController::class, 'show'])
 
 Route::view('/telepsychiatry', 'telepsychiatry')->name('telepsychiatry');
 
-Route::view('/patient-information', 'patient-information')->name('patient-information');
+Route::get('/patient-information', [PatientInformationController::class, 'index'])
+    ->name('patient-information');
 
 Route::view('/office-fees-policies', 'office-fees-policies', [
     'policies' => PracticePolicyCatalog::all(),
 ])->name('office-fees-policies');
 
-Route::view('/appointments', 'pages.placeholder', [
-    'title' => 'Appointments',
-    'description' => 'Appointment options are not connected during Phase 1.',
-])->name('appointments');
+Route::get('/appointments', [AppointmentController::class, 'index'])
+    ->name('appointments');
 
-Route::view('/patient-portal', 'pages.placeholder', [
-    'title' => 'Patient Portal',
-    'description' => 'The patient portal is not connected during Phase 1.',
-])->name('patient-portal');
+Route::get('/patient-portal', [PatientPortalController::class, 'index'])
+    ->name('patient-portal');
 
 Route::view('/contact', 'contact')->name('contact');

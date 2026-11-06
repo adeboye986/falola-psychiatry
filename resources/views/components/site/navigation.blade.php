@@ -23,7 +23,7 @@
                 <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" /></svg>
                 (659) 346-6314
             </a>
-            <x-site.button-link href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057" icon="calendar" external>
+            <x-site.button-link :href="route('appointments')" icon="calendar">
                 Book an Appointment
             </x-site.button-link>
         </div>
@@ -58,7 +58,7 @@
             <a class="mobile-nav-link" href="{{ route('office-fees-policies') }}" @click="navigationOpen = false">Office, Fees &amp; Policies</a>
             <a class="mobile-nav-link" href="{{ route('contact') }}" @click="navigationOpen = false">Contact</a>
             <a class="mobile-nav-link" href="tel:+16593466314">Call (659) 346-6314</a>
-            <x-site.button-link class="mt-4 w-full" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057" icon="calendar" external>
+            <x-site.button-link class="mt-4 w-full" :href="route('appointments')" icon="calendar">
                 Book an Appointment
             </x-site.button-link>
         </div>

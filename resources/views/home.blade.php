@@ -4,7 +4,6 @@
 @section('meta_description', 'Comprehensive and compassionate mental health care with a focus on empathy and respect, available in Alabama via telepsychiatry.')
 
 @php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
 
     $services = [
         [
@@ -103,7 +102,7 @@
                     Comprehensive and compassionate care with a focus on empathy and respect. Flexible hours, anywhere in Alabama via telepsychiatry.
                 </p>
                 <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                    <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                    <x-site.button-link :href="route('appointments')" icon="calendar">
                         Book an Appointment
                     </x-site.button-link>
                     <x-site.button-link :href="route('services.index')" variant="outline" arrow>
@@ -246,7 +245,7 @@
                     Schedule an appointment or contact our office to learn more.
                 </p>
                 <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                    <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                    <x-site.button-link :href="route('appointments')" icon="calendar">
                         Book an Appointment
                     </x-site.button-link>
                     <x-site.button-link :href="route('contact')" variant="outline" icon="phone">

@@ -4,11 +4,6 @@
 @section('meta_description', 'Review practical appointment, insurance, payment, FAQ, and patient portal information from Falola Psychiatry Practice.')
 @section('canonical', route('patient-information'))
 
-@php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
-    $patientPortalUrl = 'https://portal.kareo.com/pp-webapp/app/new/login';
-@endphp
-
 @section('content')
     <section class="overflow-hidden bg-brand-ivory">
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[26rem] lg:grid-cols-[0.9fr_1.1fr]">
@@ -22,12 +17,18 @@
                         Find practical details about appointments, insurance, payment, the patient portal, and other resources to help you prepare for your visit.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                        <x-site.button-link :href="route('appointments')" icon="calendar">
                             Book an Appointment
                         </x-site.button-link>
-                        <x-site.button-link :href="$patientPortalUrl" variant="outline" arrow external>
-                            Access Patient Portal
-                        </x-site.button-link>
+                        @if ($patientPortalUrl !== null)
+                            <x-site.button-link :href="$patientPortalUrl" variant="outline" arrow external>
+                                Access Patient Portal
+                            </x-site.button-link>
+                        @else
+                            <x-site.button-link href="tel:+16593466314" variant="outline" icon="phone">
+                                Call for Portal Help
+                            </x-site.button-link>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -233,11 +234,21 @@
                         The portal is for existing patients and opens on a separate Tebra/Kareo website. Falola Psychiatry Practice does not collect portal usernames or passwords on this website.
                     </p>
                     <div class="mt-7">
-                        <x-site.button-link :href="$patientPortalUrl" arrow external>
-                            Open Patient Portal
-                        </x-site.button-link>
+                        @if ($patientPortalUrl !== null)
+                            <x-site.button-link :href="$patientPortalUrl" arrow external>
+                                Open Patient Portal
+                            </x-site.button-link>
+                        @else
+                            <x-site.button-link href="tel:+16593466314" icon="phone">
+                                Call for Portal Help
+                            </x-site.button-link>
+                        @endif
                     </div>
-                    <p class="mt-3 text-sm leading-6 text-slate-600">External link: portal.kareo.com</p>
+                    @if ($patientPortalUrl !== null)
+                        <p class="mt-3 text-sm leading-6 text-slate-600">External link: portal.kareo.com</p>
+                    @else
+                        <p class="mt-3 text-sm leading-6 text-slate-600">The external portal destination is temporarily unavailable.</p>
+                    @endif
                 </div>
             </div>
         </div>

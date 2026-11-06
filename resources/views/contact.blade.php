@@ -5,7 +5,6 @@
 @section('canonical', route('contact'))
 
 @php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
     $directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=289+Glen+Cross+Dr%2C+Trussville%2C+AL+35173';
 @endphp
 
@@ -22,7 +21,7 @@
                         Contact the office for appointment questions or other general, non-urgent inquiries.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                        <x-site.button-link :href="route('appointments')" icon="calendar">
                             Book an Appointment
                         </x-site.button-link>
                         <x-site.button-link href="tel:+16593466314" variant="outline" icon="phone">
@@ -181,7 +180,7 @@
                 <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Ready to Schedule an Appointment?</h2>
                 <p class="mx-auto mt-3 max-w-xl text-base leading-7 text-slate-800">Use the practice's established booking page to request an appointment.</p>
                 <div class="mt-6">
-                    <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                    <x-site.button-link :href="route('appointments')" icon="calendar">
                         Book an Appointment
                     </x-site.button-link>
                 </div>

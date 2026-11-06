@@ -4,7 +4,6 @@
 @section('meta_description', 'Explore the areas of mental health care listed by Falola Psychiatry Practice, including telepsychiatry for patients located in Alabama.')
 
 @php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
 
     $services = [
         [
@@ -103,7 +102,7 @@
                         Comprehensive and compassionate care with a focus on empathy and respect. Flexible hours, anywhere in Alabama via telepsychiatry.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                        <x-site.button-link :href="route('appointments')" icon="calendar">
                             Book an Appointment
                         </x-site.button-link>
                         <x-site.button-link :href="route('about')" variant="outline" arrow>
@@ -205,7 +204,7 @@
                     Schedule an appointment or contact the office to learn more.
                 </p>
                 <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                    <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                    <x-site.button-link :href="route('appointments')" icon="calendar">
                         Book an Appointment
                     </x-site.button-link>
                     <x-site.button-link :href="route('contact')" variant="outline" icon="phone">

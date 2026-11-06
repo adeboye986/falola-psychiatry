@@ -4,10 +4,6 @@
 @section('meta_description', 'Learn about interactive video and audio appointments from Falola Psychiatry Practice for patients physically located in Alabama.')
 @section('canonical', route('telepsychiatry'))
 
-@php
-    $appointmentUrl = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057';
-@endphp
-
 @section('content')
     <section class="overflow-hidden bg-brand-ivory">
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[27rem] lg:grid-cols-[0.88fr_1.12fr]">
@@ -21,7 +17,7 @@
                         Interactive video and audio appointments make it possible to connect from home or another private location while you are physically located in Alabama.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                        <x-site.button-link :href="route('appointments')" icon="calendar">
                             Book an Appointment
                         </x-site.button-link>
                         <x-site.button-link href="#how-it-works" variant="outline" arrow>
@@ -225,7 +221,7 @@
                     Schedule an appointment or contact the office to learn more.
                 </p>
                 <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                    <x-site.button-link :href="$appointmentUrl" icon="calendar" external>
+                    <x-site.button-link :href="route('appointments')" icon="calendar">
                         Book an Appointment
                     </x-site.button-link>
                     <x-site.button-link :href="route('contact')" variant="outline" icon="phone">

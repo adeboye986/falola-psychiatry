@@ -25,7 +25,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Mental Health Care')
             ->assertSee('Dr. Michael Falola, M.D., M.P.H.')
             ->assertSee('Accepted Insurance')
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertDontSee('board-certified', false);
     }
 
@@ -52,7 +52,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Current and Past Appointments')
             ->assertSee('https://www.researchgate.net/profile/Michael-Falola', false)
             ->assertSee('https://www.psychiatryonline.org/doi/10.1176/appi.pn.2018.6a26', false)
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertDontSee('board-certified', false);
     }
 
@@ -67,7 +67,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Interactive video and audio care')
             ->assertSee('Support for patterns of inattention, hyperactivity, and impulsivity')
             ->assertSee('Support focused on study strategies, time management, organization, and academic goals.')
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertDontSee("is listed among the practice's areas of care");
 
         foreach (self::servicePages() as [$slug, $name]) {
@@ -89,7 +89,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Telepsychiatry services are available only to patients who are physically located in Alabama at the time of their appointment.')
             ->assertSee('href="#how-it-works"', false)
             ->assertSee('href="'.route('contact').'"', false)
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertDontSee('HIPAA-compliant')
             ->assertDontSee('secure link');
     }
@@ -129,7 +129,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('href="http://localhost:8000/office-fees-policies#insurance-payment"', false)
             ->assertSee('href="http://localhost:8000/office-fees-policies#consultation-fees"', false)
             ->assertSee('href="#frequently-asked-questions"', false)
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertSee('https://portal.kareo.com/pp-webapp/app/new/login', false)
             ->assertSee('target="_blank"', false)
             ->assertDontSee('$300')
@@ -170,7 +170,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('289 Glen Cross Dr, Trussville, AL 35173')
             ->assertSee('https://www.google.com/maps/dir/?api=1&amp;destination=289+Glen+Cross+Dr%2C+Trussville%2C+AL+35173', false)
             ->assertSee('Please contact our office to confirm current office hours and appointment availability.')
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertSee('This website and ordinary email are not patient portal or emergency channels.')
             ->assertDontSee('<form', false)
             ->assertDontSee('8:30 AM')
@@ -211,7 +211,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Schedule II–V controlled substance')
             ->assertSee('CMS.org')
             ->assertSee('Children (under the age of 17)')
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('href="'.route('appointments').'"', false)
             ->assertDontSee('buy.stripe.com', false);
 
         foreach (self::practicePolicyHeadings() as $heading) {
@@ -279,7 +279,7 @@ class SiteRoutesTest extends TestCase
             ->assertSee('href="'.route('contact').'"', false)
             ->assertSee('href="'.route('services.show', ['service' => $slug]).'"', false)
             ->assertSee('images/services/details/'.$slug.'.webp', false)
-            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false);
+            ->assertSee('href="'.route('appointments').'"', false);
     }
 
     public function test_unknown_service_detail_returns_not_found(): void
@@ -305,18 +305,6 @@ class SiteRoutesTest extends TestCase
 
         $this->assertCount(10, array_unique($imagePaths));
         $this->assertCount(10, array_unique($imageHashes));
-    }
-
-    #[DataProvider('placeholderPages')]
-    public function test_sitemap_placeholder_pages_render(string $uri, string $heading): void
-    {
-        $response = $this->get($uri);
-
-        $response
-            ->assertOk()
-            ->assertViewIs('pages.placeholder')
-            ->assertSee($heading)
-            ->assertSee('No medical or professional information has been inferred or added.');
     }
 
     /** @return list<string> */
@@ -349,15 +337,6 @@ class SiteRoutesTest extends TestCase
             'schizophrenia' => ['schizophrenia', 'Schizophrenia'],
             'brief psychotherapies' => ['brief-psychotherapies', 'Brief Psychotherapies'],
             'academic coaching' => ['academic-coaching', 'Academic Coaching'],
-        ];
-    }
-
-    /** @return array<string, array{string, string}> */
-    public static function placeholderPages(): array
-    {
-        return [
-            'appointments' => ['/appointments', 'Appointments'],
-            'patient portal' => ['/patient-portal', 'Patient Portal'],
         ];
     }
 }
