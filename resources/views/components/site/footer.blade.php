@@ -16,6 +16,7 @@
                     <a class="footer-link" href="{{ route('services.index') }}">Services</a>
                     <a class="footer-link" href="{{ route('telepsychiatry') }}">Telepsychiatry</a>
                     <a class="footer-link" href="{{ route('patient-information') }}">Patient Information</a>
+                    <a class="footer-link" href="{{ route('office-fees-policies') }}">Office, Fees &amp; Policies</a>
                     <a class="footer-link" href="{{ route('contact') }}">Contact</a>
                 </nav>
             </div>

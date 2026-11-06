@@ -126,8 +126,8 @@ class SiteRoutesTest extends TestCase
             ->assertSee('Quick Answers from Verified Information')
             ->assertSee('Access the External Patient Portal')
             ->assertSee('href="#appointments"', false)
-            ->assertSee('href="#insurance"', false)
-            ->assertSee('href="#fees-payment"', false)
+            ->assertSee('href="http://localhost:8000/office-fees-policies#insurance-payment"', false)
+            ->assertSee('href="http://localhost:8000/office-fees-policies#consultation-fees"', false)
             ->assertSee('href="#frequently-asked-questions"', false)
             ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
             ->assertSee('https://portal.kareo.com/pp-webapp/app/new/login', false)
@@ -182,6 +182,68 @@ class SiteRoutesTest extends TestCase
         $imagePaths = [
             public_path('images/contact/hero.webp'),
             public_path('images/contact/appointment-cta.webp'),
+        ];
+
+        $imageHashes = [];
+
+        foreach ($imagePaths as $imagePath) {
+            $this->assertFileExists($imagePath);
+            $imageHashes[] = hash_file('sha256', $imagePath);
+        }
+
+        $this->assertCount(2, array_unique($imagePaths));
+        $this->assertCount(2, array_unique($imageHashes));
+    }
+
+    public function test_office_fees_policies_page_renders_complete_legacy_policy_topics_and_neutral_fee_guidance(): void
+    {
+        $response = $this->get('/office-fees-policies');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('office-fees-policies')
+            ->assertSee('Office, Fees &amp; Practice Policies', false)
+            ->assertSee('Confirm Current Fees')
+            ->assertSee('The policy page displayed $300 and $175; legacy payment links displayed $350 and $160.')
+            ->assertSee('None of these amounts is presented as a current fee.')
+            ->assertSee('72-hour notice')
+            ->assertSee('48–72 hours')
+            ->assertSee('Schedule II–V controlled substance')
+            ->assertSee('CMS.org')
+            ->assertSee('Children (under the age of 17)')
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertDontSee('buy.stripe.com', false);
+
+        foreach (self::practicePolicyHeadings() as $heading) {
+            $response->assertSee($heading);
+        }
+
+        $this->assertSame(9, substr_count($response->getContent(), 'aria-controls="policy-panel-'));
+        $this->assertSame(9, substr_count($response->getContent(), ':aria-expanded="open.toString()"'));
+    }
+
+    public function test_office_fees_policies_page_is_linked_from_shared_navigation_and_patient_information(): void
+    {
+        $destination = route('office-fees-policies');
+
+        $homeResponse = $this->get('/');
+        $patientInformationResponse = $this->get('/patient-information');
+
+        $homeResponse
+            ->assertOk()
+            ->assertSee('href="'.$destination.'"', false);
+
+        $patientInformationResponse
+            ->assertOk()
+            ->assertSee('href="'.$destination.'#insurance-payment"', false)
+            ->assertSee('href="'.$destination.'#consultation-fees"', false);
+    }
+
+    public function test_office_fees_policies_page_photographs_are_unique_files(): void
+    {
+        $imagePaths = [
+            public_path('images/office-fees-policies/hero.webp'),
+            public_path('images/office-fees-policies/policies.webp'),
         ];
 
         $imageHashes = [];
@@ -255,6 +317,22 @@ class SiteRoutesTest extends TestCase
             ->assertViewIs('pages.placeholder')
             ->assertSee($heading)
             ->assertSee('No medical or professional information has been inferred or added.');
+    }
+
+    /** @return list<string> */
+    public static function practicePolicyHeadings(): array
+    {
+        return [
+            'Check-In & Appointments',
+            'Cancellations & No-Shows',
+            'Telehealth (Telepsychiatry)',
+            'Medication Refills & Controlled Substances',
+            'Laboratory Testing',
+            'Treatment Communications',
+            'Medical Records & Documentation',
+            'Patient Dismissal',
+            'Privacy & HIPAA',
+        ];
     }
 
     /** @return array<string, array{string, string}> */

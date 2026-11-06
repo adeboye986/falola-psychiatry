@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ServiceController;
+use App\Support\PracticePolicyCatalog;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -16,6 +17,10 @@ Route::get('/services/{service}', [ServiceController::class, 'show'])
 Route::view('/telepsychiatry', 'telepsychiatry')->name('telepsychiatry');
 
 Route::view('/patient-information', 'patient-information')->name('patient-information');
+
+Route::view('/office-fees-policies', 'office-fees-policies', [
+    'policies' => PracticePolicyCatalog::all(),
+])->name('office-fees-policies');
 
 Route::view('/appointments', 'pages.placeholder', [
     'title' => 'Appointments',

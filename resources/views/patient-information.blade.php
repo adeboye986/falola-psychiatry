@@ -57,7 +57,7 @@
                 <svg class="mt-auto size-5 self-end text-brand-green transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5" /></svg>
             </a>
 
-            <a class="group flex min-h-52 flex-col rounded-2xl border border-brand-sand/70 bg-brand-ivory p-7 shadow-[0_8px_24px_rgba(31,50,42,0.06)] transition hover:-translate-y-0.5 hover:border-brand-green/30 hover:shadow-[0_12px_30px_rgba(31,50,42,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green" href="#insurance">
+            <a class="group flex min-h-52 flex-col rounded-2xl border border-brand-sand/70 bg-brand-ivory p-7 shadow-[0_8px_24px_rgba(31,50,42,0.06)] transition hover:-translate-y-0.5 hover:border-brand-green/30 hover:shadow-[0_12px_30px_rgba(31,50,42,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green" href="{{ route('office-fees-policies') }}#insurance-payment">
                 <svg class="size-11 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5 19 6v5.1c0 4.25-2.75 7.9-7 9.4-4.25-1.5-7-5.15-7-9.4V6l7-2.5Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
@@ -67,7 +67,7 @@
                 <svg class="mt-auto size-5 self-end text-brand-green transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5" /></svg>
             </a>
 
-            <a class="group flex min-h-52 flex-col rounded-2xl border border-brand-sand/70 bg-brand-ivory p-7 shadow-[0_8px_24px_rgba(31,50,42,0.06)] transition hover:-translate-y-0.5 hover:border-brand-green/30 hover:shadow-[0_12px_30px_rgba(31,50,42,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green" href="#fees-payment">
+            <a class="group flex min-h-52 flex-col rounded-2xl border border-brand-sand/70 bg-brand-ivory p-7 shadow-[0_8px_24px_rgba(31,50,42,0.06)] transition hover:-translate-y-0.5 hover:border-brand-green/30 hover:shadow-[0_12px_30px_rgba(31,50,42,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green" href="{{ route('office-fees-policies') }}#consultation-fees">
                 <svg class="size-11 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
                     <rect x="3.5" y="5" width="17" height="14" rx="2" />
                     <path stroke-linecap="round" d="M3.5 9.25h17M7 15h3" />

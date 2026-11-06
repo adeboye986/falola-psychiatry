@@ -68,6 +68,15 @@ Both Contact page photographs are distinct Pexels photographs converted locally 
 | Contact | `public/images/contact/hero.webp` | Hero | [Photo 10375901](https://www.pexels.com/photo/woman-in-dress-sitting-in-front-of-a-laptop-10375901/) by RDNE Stock project | Pexels license; verified free-use page | No |
 | Contact | `public/images/contact/appointment-cta.webp` | Appointment CTA | [Photo 36777597](https://www.pexels.com/photo/cozy-minimalist-living-room-with-armchairs-36777597/) by Curtis Adams | Pexels license; verified free-use page | No |
 
+## Office, Fees & Practice Policies page photographs
+
+Both Office, Fees & Practice Policies photographs are distinct Pexels photographs converted locally to WebP. They are covered by the [Pexels license](https://www.pexels.com/license/), which permits free use and modification and does not require attribution. Photographer credit is retained here for provenance.
+
+| Page | Local image | Section | Source and photographer | License status | Appears elsewhere? |
+| --- | --- | --- | --- | --- | --- |
+| Office, Fees & Practice Policies | `public/images/office-fees-policies/hero.webp` | Hero | [Photo 6207368](https://www.pexels.com/photo/application-sheet-with-pen-on-table-in-building-6207368/) by Skylar Kang | Pexels license; verified free-use page | No |
+| Office, Fees & Practice Policies | `public/images/office-fees-policies/policies.webp` | Policy support panel | [Photo 34633284](https://www.pexels.com/photo/close-up-of-a-person-writing-at-a-desk-34633284/) by Murad Khan | Pexels license; verified free-use page | No |
+
 ## Duplication controls
 
 - Each detail page contains exactly one photograph: its service-specific hero.
@@ -77,3 +86,4 @@ Both Contact page photographs are distinct Pexels photographs converted locally 
 - Telepsychiatry photographs must remain unique to their named sections and must not be reused on another page.
 - Patient Information photographs must remain unique to their named sections and must not be reused on another page.
 - Contact photographs must remain unique to their named sections and must not be reused on another page.
+- Office, Fees & Practice Policies photographs must remain unique to their named sections and must not be reused on another page.
