@@ -13,10 +13,7 @@ Route::get('/services/{service}', [ServiceController::class, 'show'])
     ->where('service', '[a-z0-9-]+')
     ->name('services.show');
 
-Route::view('/telepsychiatry', 'pages.placeholder', [
-    'title' => 'Telepsychiatry',
-    'description' => 'Telepsychiatry information is awaiting clinical and legal review.',
-])->name('telepsychiatry');
+Route::view('/telepsychiatry', 'telepsychiatry')->name('telepsychiatry');
 
 Route::view('/patient-information', 'pages.placeholder', [
     'title' => 'Patient Information',

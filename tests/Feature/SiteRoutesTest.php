@@ -77,6 +77,42 @@ class SiteRoutesTest extends TestCase
         }
     }
 
+    public function test_telepsychiatry_page_renders_verified_information_and_shared_actions(): void
+    {
+        $response = $this->get('/telepsychiatry');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('telepsychiatry')
+            ->assertSee('Convenient Virtual Care')
+            ->assertSee('Important: Location Requirement')
+            ->assertSee('Telepsychiatry services are available only to patients who are physically located in Alabama at the time of their appointment.')
+            ->assertSee('href="#how-it-works"', false)
+            ->assertSee('href="'.route('contact').'"', false)
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertDontSee('HIPAA-compliant')
+            ->assertDontSee('secure link');
+    }
+
+    public function test_telepsychiatry_page_photographs_are_unique_files(): void
+    {
+        $imagePaths = [
+            public_path('images/telepsychiatry/hero.webp'),
+            public_path('images/telepsychiatry/how-it-works.webp'),
+            public_path('images/telepsychiatry/compassionate-care.webp'),
+        ];
+
+        $imageHashes = [];
+
+        foreach ($imagePaths as $imagePath) {
+            $this->assertFileExists($imagePath);
+            $imageHashes[] = hash_file('sha256', $imagePath);
+        }
+
+        $this->assertCount(3, array_unique($imagePaths));
+        $this->assertCount(3, array_unique($imageHashes));
+    }
+
     #[DataProvider('servicePages')]
     public function test_each_service_detail_page_renders_its_content_and_shared_actions(string $slug, string $name): void
     {
@@ -160,7 +196,6 @@ class SiteRoutesTest extends TestCase
     public static function placeholderPages(): array
     {
         return [
-            'telepsychiatry' => ['/telepsychiatry', 'Telepsychiatry'],
             'patient information' => ['/patient-information', 'Patient Information'],
             'appointments' => ['/appointments', 'Appointments'],
             'patient portal' => ['/patient-portal', 'Patient Portal'],

@@ -59,7 +59,6 @@
                 </section>
 
                 <section aria-labelledby="common-concerns">
-                    <div class="mb-4 h-0.5 w-10 bg-brand-green"></div>
                     <h2 id="common-concerns" class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green">
                         Common Concerns
                     </h2>
@@ -79,7 +78,6 @@
                 </section>
 
                 <section aria-labelledby="evaluation-and-care">
-                    <div class="mb-4 h-0.5 w-10 bg-brand-green"></div>
                     <h2 id="evaluation-and-care" class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green">
                         {{ $service['care_heading'] }}
                     </h2>
@@ -89,7 +87,6 @@
                 </section>
 
                 <section aria-labelledby="when-to-seek-help">
-                    <div class="mb-4 h-0.5 w-10 bg-brand-green"></div>
                     <h2 id="when-to-seek-help" class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green">
                         When to Seek Help
                     </h2>

@@ -1,6 +1,6 @@
 # Service Image Inventory
 
-Updated: November 5, 2026
+Updated: November 6, 2026
 
 This inventory is the duplication-control record for the ten individual service pages. Detail-page photographs must not be replaced or reused without updating this file and rerunning the duplicate-image audit.
 
@@ -38,9 +38,19 @@ The following photographs already appear on both the Homepage and Services overv
 | Brief Psychotherapies | `public/images/home/service-brief-psychotherapies.jpg` | Homepage card; Services overview card | Local project asset; original provenance not recorded | Yes |
 | Academic Coaching | `public/images/home/service-academic-coaching.jpg` | Homepage card; Services overview card | Local project asset; original provenance not recorded | Yes |
 
-## Duplication controls
+## Telepsychiatry page photographs
 
+All three Telepsychiatry photographs are distinct Pexels photographs converted locally to WebP. They are covered by the [Pexels license](https://www.pexels.com/license/), which permits free use and modification and does not require attribution. Photographer credit is retained here for provenance.
+
+| Page | Local image | Section | Source and photographer | License status | Appears elsewhere? |
+| --- | --- | --- | --- | --- | --- |
+| Telepsychiatry | `public/images/telepsychiatry/hero.webp` | Hero | [Photo 7195087](https://www.pexels.com/photo/woman-looking-at-the-laptop-screen-7195087/) by Kaboompics.com | Pexels license; verified free-use page | No |
+| Telepsychiatry | `public/images/telepsychiatry/how-it-works.webp` | How It Works | [Photo 7776428](https://www.pexels.com/photo/a-man-having-a-video-call-on-his-laptop-7776428/) by Mikhail Nilov | Pexels license; verified free-use page | No |
+| Telepsychiatry | `public/images/telepsychiatry/compassionate-care.webp` | Care From a Familiar Setting | [Photo 28806780](https://www.pexels.com/photo/casual-portrait-of-smiling-woman-by-window-28806780/) by Nele Holemans | Pexels license; verified free-use page | No |
+
+## Duplication controls
 - Each detail page contains exactly one photograph: its service-specific hero.
 - Shared logos and interface icons are brand/interface assets, not photographs.
 - Detail-page appointment sections use color and typography rather than a shared photographic background.
 - Exact file hashes and perceptual hashes must be compared across all project photographs during verification.
+- Telepsychiatry photographs must remain unique to their named sections and must not be reused on another page.
