@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Office, Fees & Practice Policies | Falola Psychiatry Practice')
-@section('meta_description', 'Review legacy office procedures, fee information, payment policies, telepsychiatry requirements, records, privacy, and other practice policies.')
+@section('meta_description', 'Review office procedures, fee information, payment policies, telepsychiatry requirements, records, privacy, and other practice policies.')
 @section('canonical', route('office-fees-policies'))
 
 @section('content')
@@ -14,7 +14,7 @@
                         Office, Fees &amp; Practice Policies
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
-                        Review office procedures, payment information, and practice policies preserved from the legacy website. Contact the office to confirm current details.
+                        Review office procedures, payment information, and practice policies for Falola Psychiatry Practice.
                     </p>
                     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
                         <x-site.button-link :href="route('appointments')" icon="calendar">
@@ -47,8 +47,8 @@
                     <svg class="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="m4 7.5 7.5-4h7A1.5 1.5 0 0 1 20 5v7.5l-8.25 8.25a1.5 1.5 0 0 1-2.12 0L3.25 14.37a1.5 1.5 0 0 1 0-2.12L4 11.5v-4Z" /><circle cx="15.5" cy="8" r="1.25" /></svg>
                 </span>
                 <div>
-                    <h2 class="font-serif text-2xl font-normal text-brand-green">Confirm Current Fees</h2>
-                    <p class="mt-2 text-base leading-7 text-slate-700">Legacy sources conflict, so current consultation costs must be confirmed.</p>
+                    <h2 class="font-serif text-2xl font-normal text-brand-green">Consultation Fees</h2>
+                    <p class="mt-2 text-base leading-7 text-slate-700">Contact the office for consultation costs and payment information.</p>
                 </div>
             </article>
 
@@ -58,7 +58,7 @@
                 </span>
                 <div>
                     <h2 class="font-serif text-2xl font-normal text-brand-green">Office Procedures</h2>
-                    <p class="mt-2 text-base leading-7 text-slate-700">Review the complete operational wording preserved from the legacy policy page.</p>
+                    <p class="mt-2 text-base leading-7 text-slate-700">Review appointment, communication, records, and treatment procedures.</p>
                 </div>
             </article>
 
@@ -67,8 +67,8 @@
                     <svg class="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5 19 6v5.1c0 4.25-2.75 7.9-7 9.4-4.25-1.5-7-5.15-7-9.4V6l7-2.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" /></svg>
                 </span>
                 <div>
-                    <h2 class="font-serif text-2xl font-normal text-brand-green">Privacy Information</h2>
-                    <p class="mt-2 text-base leading-7 text-slate-700">Legacy privacy wording is retained for review, not as a replacement for an approved notice.</p>
+                    <h2 class="font-serif text-2xl font-normal text-brand-green">Privacy &amp; HIPAA</h2>
+                    <p class="mt-2 text-base leading-7 text-slate-700">Review information about records, privacy, and patient responsibilities.</p>
                 </div>
             </article>
         </div>
@@ -78,8 +78,8 @@
         <div class="mx-auto grid max-w-7xl gap-7 lg:grid-cols-2">
             <article class="rounded-3xl bg-brand-green px-7 py-9 text-white shadow-[0_14px_38px_rgba(0,61,45,0.16)] sm:px-10 lg:px-12" id="consultation-fees">
                 <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Consultation Fees</p>
-                <h2 class="mt-3 font-serif text-4xl font-normal tracking-[-0.03em] text-white sm:text-5xl">Confirm Current Fees</h2>
-                <p class="mt-3 text-base leading-7 text-white/85">Current consultation prices could not be verified because the legacy policy page and linked payment pages show conflicting amounts.</p>
+                <h2 class="mt-3 font-serif text-4xl font-normal tracking-[-0.03em] text-white sm:text-5xl">Consultation Fees</h2>
+                <p class="mt-3 text-base leading-7 text-white/85">Contact the office for current consultation fees and payment options.</p>
 
                 <dl class="mt-7 grid gap-3">
                     <div class="flex flex-col gap-1 rounded-xl bg-white/14 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
@@ -91,11 +91,6 @@
                         <dd class="text-lg font-semibold">Contact office</dd>
                     </div>
                 </dl>
-
-                <div class="mt-6 rounded-xl border border-white/25 bg-black/10 p-5 text-sm leading-6 text-white/85">
-                    <p class="font-semibold text-white">Historical pricing discrepancy</p>
-                    <p class="mt-1">The policy page displayed $300 and $175; legacy payment links displayed $350 and $160. None of these amounts is presented as a current fee.</p>
-                </div>
             </article>
 
             <article id="insurance-payment" class="relative isolate overflow-hidden rounded-3xl border border-brand-sand/70 bg-brand-ivory px-7 py-9 shadow-[0_12px_34px_rgba(31,50,42,0.07)] sm:px-10 lg:px-12">
@@ -106,8 +101,8 @@
                     </span>
                     <div>
                         <h2 class="font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Insurance &amp; Payment</h2>
-                        <p class="mt-4 text-base leading-7 text-slate-700">Insurance participation varies by plan. Confirm current participation and benefits directly with both the practice and your insurer before scheduling.</p>
-                        <p class="mt-3 text-base leading-7 text-slate-700">Legacy payment expectations and accepted payment methods are preserved in the Check-In &amp; Appointments accordion below.</p>
+                        <p class="mt-4 text-base leading-7 text-slate-700">Falola Psychiatry Practice accepts a range of insurance plans and provides payment information for scheduled care.</p>
+                        <p class="mt-3 text-base leading-7 text-slate-700">Appointment and payment details are available in the policies below.</p>
                         <div class="mt-7">
                             <x-site.button-link :href="route('patient-information').'#insurance'" variant="outline" arrow>
                                 Review Patient Information
@@ -123,16 +118,11 @@
         <div class="mx-auto max-w-7xl">
             <div class="max-w-4xl">
                 <p class="eyebrow">Practice Policies</p>
-                <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Complete Legacy Policy Wording</h2>
-                <p class="mt-4 text-base leading-7 text-slate-700 sm:text-[1.0625rem]">Select a topic to review the wording retained from the original Office &amp; Fees Policies page.</p>
+                <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Practice Policies</h2>
+                <p class="mt-4 text-base leading-7 text-slate-700 sm:text-[1.0625rem]">Select a topic to review office and treatment policies.</p>
             </div>
 
-            <div class="mt-7 rounded-2xl border border-amber-300 bg-amber-50 px-6 py-5 text-sm leading-6 text-amber-950" role="note">
-                <p class="font-semibold">Policy review notice</p>
-                <p class="mt-1">This wording is preserved from the legacy website and is not a dated, counsel-approved policy document. Fee amounts conflict, and controlled-substance, telehealth, testing, privacy, records, dismissal, and minor-confidentiality language require professional review. The federal telemedicine statement is time-limited through December 31, 2026.</p>
-            </div>
-
-            <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.75fr_0.85fr]">
+            <div class="mt-8 grid items-start gap-8 lg:grid-cols-[1.75fr_0.85fr]">
                 <div class="grid gap-3" id="practice-policies">
                     @foreach ($policies as $index => $policy)
                         @php($panelId = 'policy-panel-'.$index)
@@ -187,10 +177,8 @@
 
                             <div id="{{ $panelId }}" x-show="open" x-cloak>
                                 <div class="border-t border-brand-sand/80 bg-white/75 px-5 py-6 sm:px-7 sm:py-7">
-                                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-navy">Legacy website wording</p>
-
                                     @foreach ($policy['sections'] as $section)
-                                        <section class="mt-6 first:mt-4">
+                                        <section class="mt-6 first:mt-0">
                                             <h4 class="font-serif text-2xl font-normal text-brand-green">{{ $section['heading'] }}</h4>
                                             <div class="mt-3 grid gap-3 text-base leading-7 text-slate-700">
                                                 @foreach ($section['paragraphs'] as $paragraph)
@@ -210,12 +198,6 @@
                                             @endisset
                                         </section>
                                     @endforeach
-
-                                    @isset($policy['review_note'])
-                                        <div class="mt-6 rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-950" role="note">
-                                            <span class="font-semibold">Review required:</span> {{ $policy['review_note'] }}
-                                        </div>
-                                    @endisset
                                 </div>
                             </div>
                         </article>
@@ -236,7 +218,7 @@
                     <div class="rounded-3xl border border-brand-green/10 bg-[#eef5ed] px-7 py-9 sm:px-9">
                         <span class="grid size-12 place-items-center rounded-full border-2 border-brand-green font-serif text-2xl text-brand-green" aria-hidden="true">i</span>
                         <h2 class="mt-5 font-serif text-3xl font-normal tracking-[-0.025em] text-brand-green sm:text-4xl">Questions About Our Policies?</h2>
-                        <p class="mt-4 text-base leading-7 text-slate-700">Contact the office to confirm current fees, insurance participation, or practice procedures.</p>
+                        <p class="mt-4 text-base leading-7 text-slate-700">Our office can answer questions about fees, insurance participation, or practice procedures.</p>
                         <div class="mt-6">
                             <x-site.button-link class="w-full" href="tel:+16593466314" icon="phone">
                                 (659) 346-6314

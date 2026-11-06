@@ -195,7 +195,7 @@ class SiteRoutesTest extends TestCase
         $this->assertCount(2, array_unique($imageHashes));
     }
 
-    public function test_office_fees_policies_page_renders_complete_legacy_policy_topics_and_neutral_fee_guidance(): void
+    public function test_office_fees_policies_page_renders_policy_topics_without_review_warnings(): void
     {
         $response = $this->get('/office-fees-policies');
 
@@ -203,16 +203,19 @@ class SiteRoutesTest extends TestCase
             ->assertOk()
             ->assertViewIs('office-fees-policies')
             ->assertSee('Office, Fees &amp; Practice Policies', false)
-            ->assertSee('Confirm Current Fees')
-            ->assertSee('The policy page displayed $300 and $175; legacy payment links displayed $350 and $160.')
-            ->assertSee('None of these amounts is presented as a current fee.')
+            ->assertSee('Consultation Fees')
+            ->assertSee('Practice Policies')
             ->assertSee('72-hour notice')
             ->assertSee('48–72 hours')
             ->assertSee('Schedule II–V controlled substance')
             ->assertSee('CMS.org')
             ->assertSee('Children (under the age of 17)')
             ->assertSee('href="'.route('appointments').'"', false)
-            ->assertDontSee('buy.stripe.com', false);
+            ->assertDontSee('buy.stripe.com', false)
+            ->assertDontSee('Policy review notice')
+            ->assertDontSee('Review required:')
+            ->assertDontSee('Legacy website wording')
+            ->assertDontSee('Historical pricing discrepancy');
 
         foreach (self::practicePolicyHeadings() as $heading) {
             $response->assertSee($heading);
@@ -220,6 +223,22 @@ class SiteRoutesTest extends TestCase
 
         $this->assertSame(9, substr_count($response->getContent(), 'aria-controls="policy-panel-'));
         $this->assertSame(9, substr_count($response->getContent(), ':aria-expanded="open.toString()"'));
+    }
+
+    public function test_shared_header_omits_contact_details(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertOk();
+
+        preg_match('/<header.*?<\/header>/s', $response->getContent(), $matches);
+
+        $header = $matches[0] ?? '';
+
+        $this->assertNotSame('', $header);
+        $this->assertStringNotContainsString('href="'.route('contact').'"', $header);
+        $this->assertStringNotContainsString('href="tel:+16593466314"', $header);
+        $this->assertStringContainsString('href="'.route('appointments').'"', $header);
     }
 
     public function test_office_fees_policies_page_is_linked_from_shared_navigation_and_patient_information(): void

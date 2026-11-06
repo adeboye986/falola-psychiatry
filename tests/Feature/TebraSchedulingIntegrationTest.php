@@ -18,7 +18,20 @@ class TebraSchedulingIntegrationTest extends TestCase
         $this->withoutVite();
     }
 
-    public function test_external_mode_is_the_safe_default_for_the_appointment_page(): void
+    public function test_iframe_mode_is_enabled_by_default(): void
+    {
+        $response = $this->get(route('appointments'));
+
+        $response
+            ->assertOk()
+            ->assertViewHas('iframeEnabled', true)
+            ->assertHeader('Content-Security-Policy', 'frame-src https://d2oe0ra32qx05a.cloudfront.net;')
+            ->assertSee('Load Secure Scheduler')
+            ->assertDontSee('Before You Continue')
+            ->assertDontSee('Laravel website');
+    }
+
+    public function test_external_mode_remains_available_for_the_appointment_page(): void
     {
         config()->set('tebra.scheduler_mode', 'external');
 

@@ -20,7 +20,7 @@
     </section>
 
     <section class="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+        <div class="mx-auto max-w-7xl">
             <div>
                 <p class="eyebrow">Online Scheduling</p>
                 <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">
@@ -40,7 +40,7 @@
                                     <div class="max-w-2xl">
                                         <h3 class="font-serif text-3xl font-normal text-brand-green">Load the Secure Scheduler</h3>
                                         <p class="mt-2 text-sm leading-6 text-slate-700">
-                                            The scheduler loads only after you choose to continue. Information entered there is sent directly to Tebra, not to this Laravel website.
+                                            The secure Tebra scheduler opens below after you choose to continue.
                                         </p>
                                     </div>
                                     <button
@@ -124,16 +124,6 @@
                 @endif
             </div>
 
-            <aside class="rounded-3xl border border-brand-green/10 bg-[#eef5ed] px-7 py-8 sm:px-9" id="scheduler-privacy-notice">
-                <span class="grid size-12 place-items-center rounded-full border-2 border-brand-green font-serif text-2xl text-brand-green" aria-hidden="true">i</span>
-                <h2 class="mt-5 font-serif text-3xl font-normal tracking-[-0.025em] text-brand-green">Before You Continue</h2>
-                <p class="mt-4 text-base leading-7 text-slate-700">
-                    Appointment information is entered into Tebra's scheduling system. Falola Psychiatry Practice's Laravel website does not receive or store the scheduling form contents.
-                </p>
-                <p class="mt-4 text-sm leading-6 text-slate-600">
-                    Do not use online scheduling for an emergency. Call 911 or go to the nearest emergency department for immediate safety concerns.
-                </p>
-            </aside>
         </div>
     </section>
 @endsection
