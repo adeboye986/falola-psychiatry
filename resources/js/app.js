@@ -4,23 +4,10 @@ window.Alpine = Alpine;
 
 Alpine.data('tebraScheduler', ({ schedulerUrl, timeoutMs }) => ({
     schedulerDelayed: false,
-    schedulerLoaded: false,
-    schedulerLoading: false,
+    schedulerLoading: true,
     timeoutId: null,
 
-    loadScheduler() {
-        if (this.schedulerLoaded) {
-            return;
-        }
-
-        this.schedulerDelayed = false;
-        this.schedulerLoaded = true;
-        this.schedulerLoading = true;
-
-        this.$nextTick(() => {
-            this.$refs.schedulerFrame?.focus();
-        });
-
+    init() {
         this.timeoutId = window.setTimeout(() => {
             this.schedulerDelayed = true;
             this.schedulerLoading = false;

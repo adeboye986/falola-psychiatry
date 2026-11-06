@@ -36,25 +36,10 @@
                             <div
                                 x-data="tebraScheduler({ schedulerUrl: {{ Js::from($schedulerUrl) }}, timeoutMs: {{ $schedulerTimeoutMs }} })"
                             >
-                                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                                    <div class="max-w-2xl">
-                                        <h3 class="font-serif text-3xl font-normal text-brand-green">Load the Secure Scheduler</h3>
-                                        <p class="mt-2 text-sm leading-6 text-slate-700">
-                                            The secure Tebra scheduler opens below after you choose to continue.
-                                        </p>
-                                    </div>
-                                    <button
-                                        class="inline-flex min-h-11 shrink-0 items-center justify-center gap-2.5 rounded-lg border border-brand-green bg-brand-green px-5 py-3 text-center text-[0.9375rem] font-semibold text-white shadow-sm transition duration-200 hover:border-brand-green-dark hover:bg-brand-green-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green sm:px-6"
-                                        type="button"
-                                        x-show="! schedulerLoaded"
-                                        x-on:click="loadScheduler"
-                                    >
-                                        <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 9h16.5M5.25 5.25h13.5a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-12a1.5 1.5 0 0 1 1.5-1.5Z" />
-                                        </svg>
-                                        Load Secure Scheduler
-                                    </button>
-                                </div>
+                                <h3 class="font-serif text-3xl font-normal text-brand-green">Online Scheduler</h3>
+                                <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-700">
+                                    Use the Tebra scheduler below to request an available appointment.
+                                </p>
 
                                 <div
                                     class="mt-6 flex items-center gap-3 rounded-xl border border-brand-green/15 bg-white px-4 py-3 text-sm font-medium text-brand-green"
@@ -79,19 +64,15 @@
                                     The scheduler is taking longer than expected. It may still load below. You can also use the external scheduling link or call the office.
                                 </div>
 
-                                <template x-if="schedulerLoaded">
-                                    <div class="mt-6 overflow-hidden rounded-2xl border border-brand-sand bg-white shadow-inner" :aria-busy="schedulerLoading.toString()">
-                                        <iframe
-                                            class="h-[70vh] min-h-[44rem] w-full sm:h-[75vh] lg:min-h-[50rem]"
-                                            x-ref="schedulerFrame"
-                                            :src="schedulerUrl"
-                                            title="Schedule an appointment with Falola Psychiatry Practice"
-                                            referrerpolicy="no-referrer"
-                                            tabindex="-1"
-                                            x-on:load="markSchedulerLoaded"
-                                        ></iframe>
-                                    </div>
-                                </template>
+                                <div class="mt-6 overflow-hidden rounded-2xl border border-brand-sand bg-white shadow-inner" :aria-busy="schedulerLoading.toString()">
+                                    <iframe
+                                        class="h-[70vh] min-h-[44rem] w-full sm:h-[75vh] lg:min-h-[50rem]"
+                                        :src="schedulerUrl"
+                                        title="Schedule an appointment with Falola Psychiatry Practice"
+                                        referrerpolicy="no-referrer"
+                                        x-on:load="markSchedulerLoaded"
+                                    ></iframe>
+                                </div>
                             </div>
                         @else
                             <h3 class="font-serif text-3xl font-normal text-brand-green">Continue to Online Scheduling</h3>

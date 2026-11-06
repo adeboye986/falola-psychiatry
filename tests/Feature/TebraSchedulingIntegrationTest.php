@@ -26,7 +26,8 @@ class TebraSchedulingIntegrationTest extends TestCase
             ->assertOk()
             ->assertViewHas('iframeEnabled', true)
             ->assertHeader('Content-Security-Policy', 'frame-src https://d2oe0ra32qx05a.cloudfront.net;')
-            ->assertSee('Load Secure Scheduler')
+            ->assertSee('Online Scheduler')
+            ->assertDontSee('Load Secure Scheduler')
             ->assertDontSee('Before You Continue')
             ->assertDontSee('Laravel website');
     }
@@ -52,7 +53,7 @@ class TebraSchedulingIntegrationTest extends TestCase
             ->assertDontSee('Load Secure Scheduler');
     }
 
-    public function test_iframe_mode_is_click_to_load_and_has_scoped_security_controls(): void
+    public function test_iframe_mode_loads_automatically_and_has_scoped_security_controls(): void
     {
         config()->set('tebra.scheduler_mode', 'iframe');
         config()->set('tebra.scheduler_timeout_ms', 7000);
@@ -64,9 +65,10 @@ class TebraSchedulingIntegrationTest extends TestCase
             ->assertViewHas('iframeEnabled', true)
             ->assertHeader('Referrer-Policy', 'no-referrer')
             ->assertHeader('Content-Security-Policy', 'frame-src https://d2oe0ra32qx05a.cloudfront.net;')
-            ->assertSee('Load Secure Scheduler')
-            ->assertSee('x-on:click="loadScheduler"', false)
-            ->assertSee('<template x-if="schedulerLoaded">', false)
+            ->assertSee('Online Scheduler')
+            ->assertDontSee('Load Secure Scheduler')
+            ->assertDontSee('x-on:click="loadScheduler"', false)
+            ->assertDontSee('<template x-if="schedulerLoaded">', false)
             ->assertSee(':src="schedulerUrl"', false)
             ->assertSee('title="Schedule an appointment with Falola Psychiatry Practice"', false)
             ->assertSee('referrerpolicy="no-referrer"', false)
