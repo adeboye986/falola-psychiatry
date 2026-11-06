@@ -94,8 +94,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[25rem] lg:grid-cols-[0.9fr_1.1fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-12 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">Our Services</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
+                    <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
                         Comprehensive Psychiatric Services
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
@@ -128,8 +127,7 @@
     <section class="bg-white">
         <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
             <div class="mx-auto max-w-3xl text-center">
-                <p class="eyebrow">Our Services</p>
-                <h2 class="mt-2 text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green sm:text-5xl">
+                <h2 class="text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green sm:text-5xl">
                     Areas of Care and Treatment
                 </h2>
                 <p class="mt-4 text-base leading-7 text-slate-700 sm:text-[1.0625rem]">
@@ -167,8 +165,7 @@
 
             <div class="flex items-center px-7 py-10 text-white sm:px-10 lg:px-12 lg:py-12">
                 <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-lime">Telepsychiatry</p>
-                    <h2 class="mt-2 text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.02em] lg:text-[2.75rem]">
+                    <h2 class="text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.02em] lg:text-[2.75rem]">
                         Convenient Virtual Care
                     </h2>
                     <p class="mt-4 max-w-xl text-base leading-7 text-white/85 sm:text-lg">

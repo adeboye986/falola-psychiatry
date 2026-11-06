@@ -8,8 +8,7 @@
     <section class="border-b border-brand-sand/70 bg-brand-ivory px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div class="mx-auto max-w-7xl">
             <div class="max-w-3xl">
-                <p class="eyebrow">Appointments</p>
-                <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4.5rem]">
+                <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4.5rem]">
                     Schedule an Appointment
                 </h1>
                 <p class="mt-6 max-w-2xl text-base leading-7 text-slate-800 sm:text-lg sm:leading-8">
@@ -22,8 +21,7 @@
     <section class="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div class="mx-auto max-w-7xl">
             <div>
-                <p class="eyebrow">Online Scheduling</p>
-                <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">
+                <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">
                     Request a Time Through Tebra
                 </h2>
                 <p class="mt-4 max-w-3xl text-base leading-7 text-slate-700">

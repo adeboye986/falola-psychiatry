@@ -13,8 +13,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[26rem] lg:grid-cols-[0.9fr_1.1fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-12 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">Contact Us</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4rem]">
+                    <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4rem]">
                         Get in Touch
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
@@ -84,8 +83,7 @@
     <section class="bg-white px-5 pb-14 sm:px-8 lg:px-10 lg:pb-20">
         <div class="mx-auto grid max-w-7xl items-start gap-7 lg:grid-cols-[1.05fr_0.95fr]">
             <section class="rounded-3xl border border-brand-sand/70 bg-brand-ivory px-7 py-10 shadow-[0_12px_34px_rgba(31,50,42,0.07)] sm:px-10 lg:min-h-[38rem] lg:px-12 lg:py-12" aria-labelledby="contact-office-heading">
-                <p class="eyebrow">General Inquiries</p>
-                <h2 id="contact-office-heading" class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Contact Our Office</h2>
+                <h2 id="contact-office-heading" class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Contact Our Office</h2>
                 <p class="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-[1.0625rem]">
                     A public website contact form is not active because a secure delivery and retention workflow has not been approved. Please call the office or use email for general, non-urgent questions.
                 </p>

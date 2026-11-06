@@ -35,10 +35,6 @@
 }
 
 @layer components {
-    .eyebrow {
-        @apply text-xs font-semibold uppercase tracking-[0.2em] text-brand-navy;
-    }
-
     .site-nav-link {
         @apply relative inline-flex items-center gap-1 py-3 text-[0.9375rem] font-semibold text-brand-navy transition hover:text-brand-green focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green;
     }

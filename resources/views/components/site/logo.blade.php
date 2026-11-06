@@ -14,7 +14,7 @@
 >
     <img
         class="brand-lockup-image"
-        src="{{ asset('images/home/logo-mark.png') }}"
+        src="{{ asset('images/home/logo-mark-transparent.png') }}"
         alt="Falola Psychiatry Practice"
         width="260"
         height="260"

@@ -7,8 +7,7 @@
 @section('content')
     <section class="bg-brand-ivory px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
         <div class="mx-auto max-w-5xl">
-            <p class="eyebrow">Patient Portal</p>
-            <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4.5rem]">
+            <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[4.5rem]">
                 Access the External Patient Portal
             </h1>
             <p class="mt-6 max-w-3xl text-base leading-7 text-slate-800 sm:text-lg sm:leading-8">

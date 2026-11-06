@@ -243,8 +243,38 @@ class SiteRoutesTest extends TestCase
         $this->assertSame(2, substr_count($header, 'target="_blank"'));
         $this->assertSame(2, substr_count($header, 'rel="noopener noreferrer"'));
         $this->assertSame(2, substr_count($header, 'href="'.route('appointments').'"'));
-        $this->assertSame(1, substr_count($header, 'src="'.asset('images/home/logo-mark.png').'"'));
+        $this->assertSame(1, substr_count($header, 'src="'.asset('images/home/logo-mark-transparent.png').'"'));
+        $this->assertStringContainsString('absolute left-1/2', $header);
         $this->assertStringNotContainsString('brand-lockup-mark', $header);
+        $this->assertFileExists(public_path('images/home/logo-mark-transparent.png'));
+    }
+
+    public function test_sitewide_eyebrow_labels_are_removed(): void
+    {
+        $paths = [
+            '/',
+            '/about',
+            '/appointments',
+            '/contact',
+            '/office-fees-policies',
+            '/patient-information',
+            '/patient-portal',
+            '/services',
+            '/services/adhd',
+            '/telepsychiatry',
+        ];
+
+        foreach ($paths as $path) {
+            $response = $this->get($path);
+
+            $response->assertOk();
+
+            $content = $response->getContent();
+
+            $this->assertStringNotContainsString('class="eyebrow', $content);
+            $this->assertStringNotContainsString('text-xs font-semibold uppercase tracking-[0.2em] text-brand-lime', $content);
+            $this->assertStringNotContainsString('text-xs font-semibold uppercase tracking-[0.2em] text-white/75', $content);
+        }
     }
 
     public function test_office_fees_policies_page_is_linked_from_shared_navigation_and_patient_information(): void

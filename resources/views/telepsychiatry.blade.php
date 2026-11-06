@@ -9,8 +9,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[27rem] lg:grid-cols-[0.88fr_1.12fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-12 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">Telepsychiatry</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
+                    <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
                         Convenient Virtual Care
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
@@ -43,8 +42,7 @@
     <section class="bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
         <div class="mx-auto max-w-7xl">
             <div class="text-center">
-                <p class="eyebrow">The Benefits</p>
-                <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">
+                <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">
                     Why Choose Telepsychiatry?
                 </h2>
                 <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-[1.0625rem]">
@@ -124,8 +122,7 @@
 
             <div class="flex items-center px-7 py-10 sm:px-10 lg:px-12 lg:py-12">
                 <div>
-                    <p class="eyebrow">How It Works</p>
-                    <h2 class="mt-3 text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.03em] text-brand-green sm:text-5xl">
+                    <h2 class="text-balance font-serif text-4xl font-normal leading-tight tracking-[-0.03em] text-brand-green sm:text-5xl">
                         A Simple Video Appointment Process
                     </h2>
                     <p class="mt-4 text-base leading-7 text-slate-700">

@@ -18,8 +18,7 @@
                         </svg>
                         Back to Services
                     </a>
-                    <p class="eyebrow mt-8">Our Services</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
+                    <h1 class="mt-8 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
                         {{ $service['name'] }}
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">

@@ -94,8 +94,7 @@
 
         <div class="mx-auto flex min-h-[32rem] max-w-7xl items-center px-5 py-16 sm:px-8 lg:min-h-[28rem] lg:px-10 lg:py-14">
             <div class="max-w-xl">
-                <p class="eyebrow">Falola Psychiatry Practice</p>
-                <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.95] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem] xl:text-[4rem]">
+                <h1 class="text-balance font-serif text-5xl font-normal leading-[0.95] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem] xl:text-[4rem]">
                     Evidence-Based Mental Health Care for Adults
                 </h1>
                 <p class="mt-4 max-w-lg text-base leading-6 text-slate-800 sm:text-lg sm:leading-7">
@@ -127,8 +126,7 @@
             </div>
 
             <div>
-                <p class="eyebrow">Meet Your Psychiatrist</p>
-                <h2 class="mt-2 text-pretty font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
+                <h2 class="text-pretty font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
                     Dr. Michael Falola, M.D., M.P.H.
                 </h2>
                 <p class="mt-4 max-w-2xl text-[1.0625rem] leading-7 text-slate-700 lg:text-lg">
@@ -146,8 +144,7 @@
     <section class="bg-brand-ivory">
         <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-14">
             <div class="mx-auto max-w-3xl text-center">
-                <p class="eyebrow">Our Services</p>
-                <h2 class="mt-2 font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
+                <h2 class="font-serif text-4xl font-normal leading-tight tracking-[-0.025em] text-brand-green lg:text-[2.75rem]">
                     Comprehensive Psychiatric Services
                 </h2>
                 <p class="mt-3 text-[1.0625rem] leading-7 text-slate-700 sm:text-lg">
@@ -184,8 +181,7 @@
 
             <div class="relative flex items-center overflow-hidden px-7 py-10 text-white sm:px-10 lg:px-14 lg:py-12">
                 <div class="relative">
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-lime">Telepsychiatry</p>
-                    <h2 class="mt-2 max-w-xl font-serif text-4xl font-normal leading-tight tracking-[-0.02em] lg:text-[2.75rem]">
+                    <h2 class="max-w-xl font-serif text-4xl font-normal leading-tight tracking-[-0.02em] lg:text-[2.75rem]">
                         Convenient Virtual Care
                     </h2>
                     <p class="mt-4 max-w-xl text-base leading-7 text-white/85 sm:text-lg">

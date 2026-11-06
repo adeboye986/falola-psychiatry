@@ -9,8 +9,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[26rem] lg:grid-cols-[0.9fr_1.1fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-12 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">Patient Information</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
+                    <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
                         Helpful Information for Your Care
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
@@ -104,8 +103,7 @@
             </div>
             <div class="flex items-center px-7 py-10 sm:px-10 lg:px-12">
                 <div>
-                    <p class="eyebrow">Appointments</p>
-                    <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Preparing for Your Visit</h2>
+                    <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Preparing for Your Visit</h2>
                     <p class="mt-4 text-base leading-7 text-slate-700">
                         A little preparation can help you use your appointment time effectively. Follow any specific instructions provided by the practice.
                     </p>
@@ -136,8 +134,7 @@
         <div class="mx-auto grid max-w-7xl overflow-hidden rounded-3xl border border-brand-sand/70 bg-brand-ivory shadow-[0_12px_34px_rgba(31,50,42,0.07)] lg:grid-cols-2">
             <div class="flex items-center px-7 py-10 sm:px-10 lg:px-12">
                 <div>
-                    <p class="eyebrow">Insurance and Payment</p>
-                    <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Confirm Current Details</h2>
+                    <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Confirm Current Details</h2>
                     <p class="mt-4 text-base leading-7 text-slate-700">
                         Insurance participation can vary by plan, and current fees may depend on the appointment and payment arrangement. Please confirm details before scheduling.
                     </p>
@@ -181,8 +178,7 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="eyebrow">Frequently Asked Questions</p>
-                    <h2 class="mt-3 font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Quick Answers from Verified Information</h2>
+                    <h2 class="font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Quick Answers from Verified Information</h2>
                     <p class="mt-3 max-w-3xl text-base leading-7 text-slate-700">These answers use only information confirmed in the existing website audit.</p>
                 </div>
             </div>
@@ -228,8 +224,7 @@
             </div>
             <div class="flex items-center px-7 py-10 sm:px-10 lg:px-12">
                 <div>
-                    <p class="eyebrow">Patient Portal</p>
-                    <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Access the External Patient Portal</h2>
+                    <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Access the External Patient Portal</h2>
                     <p class="mt-4 text-base leading-7 text-slate-700">
                         The portal is for existing patients and opens on a separate Tebra/Kareo website. Falola Psychiatry Practice does not collect portal usernames or passwords on this website.
                     </p>

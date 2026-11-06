@@ -23,8 +23,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:h-[27rem] lg:grid-cols-[1.08fr_0.92fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-10 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">About Falola Psychiatry Practice</p>
-                    <h1 class="mt-3 font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green lg:text-[3.5rem]">
+                    <h1 class="font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green lg:text-[3.5rem]">
                         Dr. Michael Falola, M.D., M.P.H.
                     </h1>
                     <p class="mt-4 max-w-lg text-[1.0625rem] leading-7 text-slate-800">

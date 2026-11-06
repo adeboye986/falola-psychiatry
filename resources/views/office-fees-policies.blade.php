@@ -9,8 +9,7 @@
         <div class="mx-auto grid max-w-[90rem] lg:min-h-[27rem] lg:grid-cols-[0.86fr_1.14fr]">
             <div class="flex items-center px-5 py-14 sm:px-8 lg:px-14 lg:py-12 xl:px-20">
                 <div class="max-w-xl">
-                    <p class="eyebrow">Office, Fees &amp; Policies</p>
-                    <h1 class="mt-3 text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
+                    <h1 class="text-balance font-serif text-5xl font-normal leading-[0.98] tracking-[-0.035em] text-brand-green sm:text-6xl lg:text-[3.75rem]">
                         Office, Fees &amp; Practice Policies
                     </h1>
                     <p class="mt-5 max-w-lg text-base leading-7 text-slate-800 sm:text-[1.0625rem]">
@@ -77,8 +76,7 @@
     <section class="bg-white px-5 pb-14 sm:px-8 lg:px-10 lg:pb-20">
         <div class="mx-auto grid max-w-7xl gap-7 lg:grid-cols-2">
             <article class="rounded-3xl bg-brand-green px-7 py-9 text-white shadow-[0_14px_38px_rgba(0,61,45,0.16)] sm:px-10 lg:px-12" id="consultation-fees">
-                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Consultation Fees</p>
-                <h2 class="mt-3 font-serif text-4xl font-normal tracking-[-0.03em] text-white sm:text-5xl">Consultation Fees</h2>
+                <h2 class="font-serif text-4xl font-normal tracking-[-0.03em] text-white sm:text-5xl">Consultation Fees</h2>
                 <p class="mt-3 text-base leading-7 text-white/85">Contact the office for current consultation fees and payment options.</p>
 
                 <dl class="mt-7 grid gap-3">
@@ -117,8 +115,7 @@
     <section class="bg-white px-5 pb-20 sm:px-8 lg:px-10 lg:pb-24">
         <div class="mx-auto max-w-7xl">
             <div class="max-w-4xl">
-                <p class="eyebrow">Practice Policies</p>
-                <h2 class="mt-3 text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Practice Policies</h2>
+                <h2 class="text-balance font-serif text-4xl font-normal tracking-[-0.03em] text-brand-green sm:text-5xl">Practice Policies</h2>
                 <p class="mt-4 text-base leading-7 text-slate-700 sm:text-[1.0625rem]">Select a topic to review office and treatment policies.</p>
             </div>
 
