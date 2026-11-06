@@ -15,10 +15,7 @@ Route::get('/services/{service}', [ServiceController::class, 'show'])
 
 Route::view('/telepsychiatry', 'telepsychiatry')->name('telepsychiatry');
 
-Route::view('/patient-information', 'pages.placeholder', [
-    'title' => 'Patient Information',
-    'description' => 'Patient policies and resources are awaiting practice approval.',
-])->name('patient-information');
+Route::view('/patient-information', 'patient-information')->name('patient-information');
 
 Route::view('/appointments', 'pages.placeholder', [
     'title' => 'Appointments',

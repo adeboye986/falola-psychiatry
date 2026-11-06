@@ -113,6 +113,50 @@ class SiteRoutesTest extends TestCase
         $this->assertCount(3, array_unique($imageHashes));
     }
 
+    public function test_patient_information_page_renders_verified_resources_and_destinations(): void
+    {
+        $response = $this->get('/patient-information');
+
+        $response
+            ->assertOk()
+            ->assertViewIs('patient-information')
+            ->assertSee('Helpful Information for Your Care')
+            ->assertSee('Preparing for Your Visit')
+            ->assertSee('Confirm Current Details')
+            ->assertSee('Quick Answers from Verified Information')
+            ->assertSee('Access the External Patient Portal')
+            ->assertSee('href="#appointments"', false)
+            ->assertSee('href="#insurance"', false)
+            ->assertSee('href="#fees-payment"', false)
+            ->assertSee('href="#frequently-asked-questions"', false)
+            ->assertSee('https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_110057', false)
+            ->assertSee('https://portal.kareo.com/pp-webapp/app/new/login', false)
+            ->assertSee('target="_blank"', false)
+            ->assertDontSee('$300')
+            ->assertDontSee('$350')
+            ->assertDontSee('manage your care');
+    }
+
+    public function test_patient_information_page_photographs_are_unique_files(): void
+    {
+        $imagePaths = [
+            public_path('images/patient-information/hero.webp'),
+            public_path('images/patient-information/appointments.webp'),
+            public_path('images/patient-information/insurance-payment.webp'),
+            public_path('images/patient-information/patient-portal.webp'),
+        ];
+
+        $imageHashes = [];
+
+        foreach ($imagePaths as $imagePath) {
+            $this->assertFileExists($imagePath);
+            $imageHashes[] = hash_file('sha256', $imagePath);
+        }
+
+        $this->assertCount(4, array_unique($imagePaths));
+        $this->assertCount(4, array_unique($imageHashes));
+    }
+
     #[DataProvider('servicePages')]
     public function test_each_service_detail_page_renders_its_content_and_shared_actions(string $slug, string $name): void
     {
@@ -196,7 +240,6 @@ class SiteRoutesTest extends TestCase
     public static function placeholderPages(): array
     {
         return [
-            'patient information' => ['/patient-information', 'Patient Information'],
             'appointments' => ['/appointments', 'Appointments'],
             'patient portal' => ['/patient-portal', 'Patient Portal'],
             'contact' => ['/contact', 'Contact'],

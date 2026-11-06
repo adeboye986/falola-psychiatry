@@ -1,8 +1,8 @@
-# Service Image Inventory
+# Website Photograph Inventory
 
 Updated: November 6, 2026
 
-This inventory is the duplication-control record for the ten individual service pages. Detail-page photographs must not be replaced or reused without updating this file and rerunning the duplicate-image audit.
+This inventory is the duplication-control record for newly sourced website photographs. Photographs must not be replaced or reused without updating this file and rerunning the duplicate-image audit.
 
 ## Detail-page hero photographs
 
@@ -48,9 +48,20 @@ All three Telepsychiatry photographs are distinct Pexels photographs converted l
 | Telepsychiatry | `public/images/telepsychiatry/how-it-works.webp` | How It Works | [Photo 7776428](https://www.pexels.com/photo/a-man-having-a-video-call-on-his-laptop-7776428/) by Mikhail Nilov | Pexels license; verified free-use page | No |
 | Telepsychiatry | `public/images/telepsychiatry/compassionate-care.webp` | Care From a Familiar Setting | [Photo 28806780](https://www.pexels.com/photo/casual-portrait-of-smiling-woman-by-window-28806780/) by Nele Holemans | Pexels license; verified free-use page | No |
 
-## Duplication controls
-- Each detail page contains exactly one photograph: its service-specific hero.
+## Patient Information page photographs
+
+All four Patient Information photographs are distinct Pexels photographs converted locally to WebP. They are covered by the [Pexels license](https://www.pexels.com/license/), which permits free use and modification and does not require attribution. Photographer credit is retained here for provenance.
+
+| Page | Local image | Section | Source and photographer | License status | Appears elsewhere? |
+| --- | --- | --- | --- | --- | --- |
+| Patient Information | `public/images/patient-information/hero.webp` | Hero | [Photo 7275312](https://www.pexels.com/photo/thoughtful-black-lady-sitting-on-sofa-7275312/) by Dziana Hasanbekava | Pexels license; verified free-use page | No |
+| Patient Information | `public/images/patient-information/appointments.webp` | Preparing for Your Visit | [Photo 8487211](https://www.pexels.com/photo/a-person-writing-on-a-notebook-8487211/) by Ron Lach | Pexels license; verified free-use page | No |
+| Patient Information | `public/images/patient-information/insurance-payment.webp` | Insurance and Payment | [Photo 8815837](https://www.pexels.com/photo/woman-reading-a-document-before-signing-it-8815837/) by Kampus Production | Pexels license; verified free-use page | No |
+| Patient Information | `public/images/patient-information/patient-portal.webp` | Patient Portal | [Photo 7858836](https://www.pexels.com/photo/woman-browsing-the-internet-by-using-a-laptop-7858836/) by Greta Hoffman | Pexels license; verified free-use page | No |
+
+## Duplication controls- Each detail page contains exactly one photograph: its service-specific hero.
 - Shared logos and interface icons are brand/interface assets, not photographs.
 - Detail-page appointment sections use color and typography rather than a shared photographic background.
 - Exact file hashes and perceptual hashes must be compared across all project photographs during verification.
 - Telepsychiatry photographs must remain unique to their named sections and must not be reused on another page.
+- Patient Information photographs must remain unique to their named sections and must not be reused on another page.
