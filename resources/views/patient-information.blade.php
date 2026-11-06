@@ -244,9 +244,7 @@
                             </x-site.button-link>
                         @endif
                     </div>
-                    @if ($patientPortalUrl !== null)
-                        <p class="mt-3 text-sm leading-6 text-slate-600">External link: portal.kareo.com</p>
-                    @else
+                    @if ($patientPortalUrl === null)
                         <p class="mt-3 text-sm leading-6 text-slate-600">The external portal destination is temporarily unavailable.</p>
                     @endif
                 </div>

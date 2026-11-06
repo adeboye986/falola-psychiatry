@@ -1,8 +1,8 @@
 <header class="relative z-40 border-b border-brand-sand/70 bg-white" x-data="{ navigationOpen: false }" @keydown.escape.window="navigationOpen = false">
-    <nav class="mx-auto flex max-w-[90rem] items-center justify-between gap-5 px-5 py-2 sm:px-8 lg:px-10" aria-label="Primary navigation">
+    <nav class="mx-auto flex max-w-[90rem] items-center justify-between gap-3 px-4 py-2 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <x-site.logo compact />
 
-        <div class="hidden items-center gap-5 xl:flex 2xl:gap-8">
+        <div class="hidden items-center gap-3 min-[1380px]:flex">
             <a class="site-nav-link {{ request()->routeIs('home') ? 'site-nav-link-active' : '' }}" href="{{ route('home') }}">Home</a>
             <a class="site-nav-link {{ request()->routeIs('about') ? 'site-nav-link-active' : '' }}" href="{{ route('about') }}">About</a>
             <a class="site-nav-link {{ request()->routeIs('services.*') ? 'site-nav-link-active' : '' }}" href="{{ route('services.index') }}">
@@ -15,16 +15,26 @@
                 <svg class="size-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m3 4.5 3 3 3-3" /></svg>
             </a>
             <a class="site-nav-link {{ request()->routeIs('office-fees-policies') ? 'site-nav-link-active' : '' }}" href="{{ route('office-fees-policies') }}">Office, Fees &amp; Policies</a>
+            <a class="site-nav-link {{ request()->routeIs('contact') ? 'site-nav-link-active' : '' }}" href="{{ route('contact') }}">Contact</a>
         </div>
 
-        <div class="hidden xl:flex">
-            <x-site.button-link :href="route('appointments')" icon="calendar">
+        <div class="ml-auto hidden items-center gap-2 lg:flex">
+            <a class="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-brand-green transition hover:text-brand-green-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green min-[1380px]:gap-0" href="tel:+16593466314" aria-label="Call Falola Psychiatry Practice at (659) 346-6314">
+                <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" /></svg>
+                <span class="min-[1380px]:sr-only">(659) 346-6314</span>
+            </a>
+            @if ($patientPortalUrl !== null)
+                <x-site.button-link :href="$patientPortalUrl" variant="outline" compact external>
+                    Patient Portal
+                </x-site.button-link>
+            @endif
+            <x-site.button-link :href="route('appointments')" icon="calendar" compact>
                 Book an Appointment
             </x-site.button-link>
         </div>
 
         <button
-            class="inline-flex size-11 items-center justify-center rounded-lg border border-brand-green text-brand-green transition hover:bg-brand-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green xl:hidden"
+            class="inline-flex size-11 items-center justify-center rounded-lg border border-brand-green text-brand-green transition hover:bg-brand-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green min-[1380px]:hidden"
             type="button"
             aria-controls="mobile-navigation"
             :aria-expanded="navigationOpen"
@@ -38,7 +48,7 @@
 
     <div
         id="mobile-navigation"
-        class="absolute inset-x-0 top-full border-y border-brand-sand bg-white px-5 py-6 shadow-xl xl:hidden"
+        class="absolute inset-x-0 top-full border-y border-brand-sand bg-white px-5 py-6 shadow-xl min-[1380px]:hidden"
         x-show="navigationOpen"
         x-cloak
         x-transition.opacity.duration.150ms
@@ -51,9 +61,18 @@
             <a class="mobile-nav-link" href="{{ route('telepsychiatry') }}" @click="navigationOpen = false">Telepsychiatry</a>
             <a class="mobile-nav-link" href="{{ route('patient-information') }}" @click="navigationOpen = false">Patient Information</a>
             <a class="mobile-nav-link" href="{{ route('office-fees-policies') }}" @click="navigationOpen = false">Office, Fees &amp; Policies</a>
-            <x-site.button-link class="mt-4 w-full" :href="route('appointments')" icon="calendar">
-                Book an Appointment
-            </x-site.button-link>
+            <a class="mobile-nav-link" href="{{ route('contact') }}" @click="navigationOpen = false">Contact</a>
+            <a class="mobile-nav-link" href="tel:+16593466314">Call (659) 346-6314</a>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                @if ($patientPortalUrl !== null)
+                    <x-site.button-link class="w-full" :href="$patientPortalUrl" variant="outline" external>
+                        Patient Portal
+                    </x-site.button-link>
+                @endif
+                <x-site.button-link class="w-full" :href="route('appointments')" icon="calendar">
+                    Book an Appointment
+                </x-site.button-link>
+            </div>
         </div>
     </div>
 </header>

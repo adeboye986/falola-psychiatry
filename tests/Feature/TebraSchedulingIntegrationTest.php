@@ -135,7 +135,7 @@ class TebraSchedulingIntegrationTest extends TestCase
             ->assertSee('target="_blank"', false)
             ->assertSee('rel="noopener noreferrer"', false);
 
-        $this->assertSame(2, substr_count($patientInformation->getContent(), 'href="'.self::PORTAL_URL.'"'));
+        $this->assertSame(4, substr_count($patientInformation->getContent(), 'href="'.self::PORTAL_URL.'"'));
 
         $portal
             ->assertOk()

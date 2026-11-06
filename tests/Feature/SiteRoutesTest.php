@@ -225,7 +225,7 @@ class SiteRoutesTest extends TestCase
         $this->assertSame(9, substr_count($response->getContent(), ':aria-expanded="open.toString()"'));
     }
 
-    public function test_shared_header_omits_contact_details(): void
+    public function test_shared_header_preserves_navigation_contact_and_patient_actions(): void
     {
         $response = $this->get('/');
 
@@ -236,9 +236,13 @@ class SiteRoutesTest extends TestCase
         $header = $matches[0] ?? '';
 
         $this->assertNotSame('', $header);
-        $this->assertStringNotContainsString('href="'.route('contact').'"', $header);
-        $this->assertStringNotContainsString('href="tel:+16593466314"', $header);
-        $this->assertStringContainsString('href="'.route('appointments').'"', $header);
+        $this->assertSame(2, substr_count($header, 'href="'.route('contact').'"'));
+        $this->assertSame(2, substr_count($header, 'href="tel:+16593466314"'));
+        $this->assertSame(2, substr_count($header, 'href="'.route('office-fees-policies').'"'));
+        $this->assertSame(2, substr_count($header, 'href="https://portal.kareo.com/pp-webapp/app/new/login"'));
+        $this->assertSame(2, substr_count($header, 'target="_blank"'));
+        $this->assertSame(2, substr_count($header, 'rel="noopener noreferrer"'));
+        $this->assertSame(2, substr_count($header, 'href="'.route('appointments').'"'));
     }
 
     public function test_office_fees_policies_page_is_linked_from_shared_navigation_and_patient_information(): void

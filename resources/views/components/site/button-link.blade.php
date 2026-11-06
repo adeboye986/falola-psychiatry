@@ -4,6 +4,7 @@
     'icon' => null,
     'arrow' => false,
     'external' => false,
+    'compact' => false,
 ])
 
 @php
@@ -12,6 +13,10 @@
         'light' => 'border border-white bg-white text-brand-green hover:bg-brand-ivory',
         default => 'border border-brand-green bg-brand-green text-white hover:border-brand-green-dark hover:bg-brand-green-dark',
     };
+
+    $sizeClasses = $compact
+        ? 'min-h-10 px-3 py-2 text-sm'
+        : 'min-h-11 px-5 py-3 text-[0.9375rem] sm:px-6';
 @endphp
 
 <a
@@ -21,7 +26,8 @@
         rel="noopener noreferrer"
     @endif
     {{ $attributes->class([
-        'group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-lg px-5 py-3 text-center text-[0.9375rem] font-semibold shadow-sm transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green sm:px-6',
+        'group inline-flex items-center justify-center gap-2.5 rounded-lg text-center font-semibold shadow-sm transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green',
+        $sizeClasses,
         $variantClasses,
     ]) }}
 >
